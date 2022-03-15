@@ -1,4 +1,4 @@
-package dev.ahmed.graduationproject.entity;
+package dev.ahmed.graduationproject.app.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,18 +11,21 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "USER")
+@Table(name = "USERS")
 @Getter
 @Setter
 public class User {
 
     @Id
-    @SequenceGenerator(name = "User" , sequenceName = "USER_ID_SEQ")
-    @GeneratedValue(generator = "User")
+    @SequenceGenerator(name = "Users", sequenceName = "USER_ID_SEQ")
+    @GeneratedValue(generator = "Users")
     private Long id;
 
-    @Column(name = "USER_NAME", length = 30, unique = true)
+    @Column(name = "USER_NAME", length = 30, nullable = false, unique = true)
     private String userName;
+
+    @Column(name = "PASSWORD", nullable = false)
+    private String password;
 
     @Column(name = "FIRST_NAME", length = 30)
     private String firstName;

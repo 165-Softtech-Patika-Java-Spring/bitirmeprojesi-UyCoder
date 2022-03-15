@@ -1,7 +1,6 @@
-package dev.ahmed.graduationproject.dao;
+package dev.ahmed.graduationproject.app.dao;
 
-import dev.ahmed.graduationproject.entity.Product;
-import dev.ahmed.graduationproject.entity.User;
+import dev.ahmed.graduationproject.app.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

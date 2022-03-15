@@ -1,4 +1,4 @@
-package dev.ahmed.graduationproject.entity;
+package dev.ahmed.graduationproject.app.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,8 +25,8 @@ public class Product {
     @Column(name = "PRODUCT_NAME", length = 30, nullable = false)
     private String productName;
 
-    @Column(name = "PRODUCT_CATEGORY", length = 30, nullable = false)
-    private String productCategory;
+    @Column(name = "ID_CATEGORY", nullable = false)
+    private Long categoryId;
 
     @Column(name = "PRICE_WITHOUT_KDV", nullable = false)
     private BigDecimal priceWithoutKdv;

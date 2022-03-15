@@ -1,7 +1,6 @@
-package dev.ahmed.graduationproject.dao;
+package dev.ahmed.graduationproject.app.dao;
 
-
-import dev.ahmed.graduationproject.entity.ProductCategory;
+import dev.ahmed.graduationproject.app.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +11,6 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface ProductCategoryDao extends JpaRepository<ProductCategory, Long> {
+public interface UserDao extends JpaRepository<User, Long> {
+
 }

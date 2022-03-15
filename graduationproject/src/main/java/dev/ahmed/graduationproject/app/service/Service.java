@@ -1,4 +1,4 @@
-package dev.ahmed.graduationproject.service;
+package dev.ahmed.graduationproject.app.service;
 
 /**
  * @Author Ahmed Bughra

@@ -1,4 +1,4 @@
-package dev.ahmed.graduationproject.entity;
+package dev.ahmed.graduationproject.app.entity;
 
 import lombok.Getter;
 import lombok.Setter;
