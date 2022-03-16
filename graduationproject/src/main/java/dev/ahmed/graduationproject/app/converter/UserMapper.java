@@ -10,6 +10,7 @@ import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @Author Ahmed Bughra
@@ -21,12 +22,16 @@ import java.util.List;
 public interface UserMapper {
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
+//    User convertToUser(UserSaveRequestDto userSaveRequestDto);
     User convertToUser(UserDto userDto);
-    User convertToUser(UserSaveRequestDto userSaveRequestDto);
     User convertToUser(UserUpdateRequestDto userUpdateRequestDto);
     List<UserDto> convertToUserDtoList(List<User> userList);
-    UserDto convertToUserDto(User user);
-    UserResponseDto convertToUserResponseDto(User user);
+
+    User convertToUser(Optional<UserDto> userDto);
+//    UserDto convertToUser(Optional<User> user);
+//    UserDto convertToUserDto(User user);
+//    UserResponseDto convertToUserResponseDto(User user);
+
 
 }
 

@@ -7,4 +7,6 @@ package dev.ahmed.graduationproject.gen.enums;
 public interface BaseErrorMessage {
 
     String getMessage();
+
+
 }

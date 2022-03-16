@@ -8,6 +8,8 @@ import dev.ahmed.graduationproject.app.dto.UserResponseDto;
 import dev.ahmed.graduationproject.app.dto.UserSaveRequestDto;
 import dev.ahmed.graduationproject.app.dto.UserUpdateRequestDto;
 import dev.ahmed.graduationproject.app.entity.User;
+import dev.ahmed.graduationproject.app.exception.UserAlreadyExistsException;
+import dev.ahmed.graduationproject.app.exception.UserNotFoundException;
 import dev.ahmed.graduationproject.gen.exceptions.ItemNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -29,69 +31,35 @@ public class UserEntityService {
 
     private final UserDao userDao;
 
-
-    public User save(User user) {
-        return userDao.save(user);
-    }
-
-    public User update(User user){
-        return userDao.save(user);
-    }
-
-//    public User updates(Long id, UserDto userDto){
-//        User user = UserMapper.INSTANCE.convertToUser(userDto);
-//        return userDao.save(user);
-//    }
-
-    public User updatesById(Long id, UserDto userDto){
-        Optional<User> userOptional = userDao.findById(id);
-
-        if (userOptional.isPresent()){
-             User user = userOptional.get();
-        } else {
-            throw new NotFoundException("Item not found!");
+    public User createUser(User newUser){
+        Optional<User> userByName = userDao.findAllByUserName(newUser.getUserName());
+        if (userByName.isPresent()){
+            throw new UserAlreadyExistsException("User already exists with the name: " + newUser.getUserName());
         }
-        return userDao.save(UserMapper.INSTANCE.convertToUser(userDto));
+        return userDao.save(newUser);
+    }
+
+    public void updatesById(Long id, UserSaveRequestDto userSaveRequestDto){
+        User oldUser = getUserById(id);
+        oldUser.setUserName(userSaveRequestDto.getUserName());
+        oldUser.setPassword(userSaveRequestDto.getPassword());
+        oldUser.setFirstName(userSaveRequestDto.getFirstName());
+        oldUser.setLastName(userSaveRequestDto.getLastName());
+        userDao.save(oldUser);
     }
 
 
-    public User getById(Long id){
-        User user = userDao.getById(id);
-        return user;
+
+    public User getUserById(Long id){
+        return userDao.findUserById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found with that id: "+id));
     }
+
 
     public void deleteUser(Long id) {
         User user = userDao.getById(id);
         userDao.delete(user);
     }
-
-
-//    public UserDto updateUser(UserUpdateRequestDto userUpdateRequestDto) {
-//        controlIsUserExist(userUpdateRequestDto);
-//
-//        User user;
-//        user = UserMapper.INSTANCE.convertToUser(userUpdateRequestDto);
-//        userEntityService.save(user);
-//
-//        UserDto userDto = UserMapper.INSTANCE.convertToUserDto(user);
-//
-//        return userDto;
-//    }
-//
-//    private void controlIsUserExist(UserUpdateRequestDto userUpdateRequestDto) {
-//
-//        Long id = userUpdateRequestDto.getId();
-//        boolean isExist = userEntityService.existsById(id);
-//        if (!isExist){
-//            throw new ItemNotFoundException(UserErrorMessage.CUSTOMER_ERROR_MESSAGE);
-//        }
-//    }
-        public UserResponseDto saveUser(UserSaveRequestDto userSaveRequestDto){
-            User user = UserMapper.INSTANCE.convertToUser(userSaveRequestDto);
-            user = userDao.save(user);
-            UserResponseDto userResponseDto = UserMapper.INSTANCE.convertToUserResponseDto(user);
-            return userResponseDto;
-        }
 
 
 }

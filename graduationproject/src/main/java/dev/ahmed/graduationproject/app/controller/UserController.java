@@ -1,17 +1,14 @@
 package dev.ahmed.graduationproject.app.controller;
 
 import dev.ahmed.graduationproject.app.dto.UserDto;
+import dev.ahmed.graduationproject.app.dto.UserSaveRequestDto;
 import dev.ahmed.graduationproject.app.entity.User;
 import dev.ahmed.graduationproject.app.service.entityservice.UserEntityService;
-import dev.ahmed.graduationproject.app.dto.UserResponseDto;
-import dev.ahmed.graduationproject.app.dto.UserSaveRequestDto;
-import dev.ahmed.graduationproject.app.dto.UserUpdateRequestDto;
-import dev.ahmed.graduationproject.gen.dto.RestResponse;
-import lombok.RequiredArgsConstructor;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import javax.websocket.server.PathParam;
+import static org.springframework.http.HttpStatus.*;
 
 /**
  * @Author Ahmed Bughra
@@ -29,20 +26,23 @@ public class UserController {
 
     // Sisteme yeni kullanıcı tanımlanabilir
     @PostMapping
-    public ResponseEntity saveUser(@RequestBody User user) {
-        user = userEntityService.save(user);
+    @Operation(tags = "User Controller", description = "Create New User", summary = "Create New User")
+    public ResponseEntity createUser(@RequestBody User user) {
+        user = userEntityService.createUser(user);
         return ResponseEntity.ok(user);
     }
 
     // kullanıcı güncellenebilir
-    @PutMapping
-    public ResponseEntity update(@RequestBody User user){
-        user = userEntityService.update(user);
-        return ResponseEntity.ok(RestResponse.of(user));
+    @PutMapping("/{id}")
+    @Operation(tags = "User Controller", description = "Update User", summary = "Update User")
+    public ResponseEntity<Void> updateUserById(@PathVariable Long id, @RequestBody UserSaveRequestDto userSaveRequestDto){
+        userEntityService.updatesById(id, userSaveRequestDto);
+        return new ResponseEntity<>(OK);
     }
 
     // kullanıcı silinebilir.
     @DeleteMapping("/{id}")
+    @Operation(tags = "User Controller", description = "Delete User", summary = "Delete User")
     public ResponseEntity deleteUser(@PathVariable Long id){
         userEntityService.deleteUser(id);
         return ResponseEntity.ok(Void.TYPE);
