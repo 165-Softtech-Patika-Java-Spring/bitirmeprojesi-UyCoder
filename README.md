@@ -13,7 +13,7 @@
     <br />
     <a href="https://github.com/165-Softtech-Patika-Java-Spring/bitirmeprojesi-UyCoder/blob/main/BitirmeProjesiTalepleri.md">Project Requirements</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Project Prapration Doc</a>
+    <a href="https://github.com/165-Softtech-Patika-Java-Spring/bitirmeprojesi-UyCoder/blob/main/BitirmeProjesiHazirlikDokumani.pdf">Project Prapration Doc</a>
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">View Demo</a>
   </p>
