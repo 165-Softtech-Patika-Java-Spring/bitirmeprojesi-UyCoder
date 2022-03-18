@@ -8,7 +8,7 @@
   <h3 align="center">Softtech Spring Bootcamp Guraduation Project</h3>
 
   <p align="center">
-    Guraduation Project
+    Ahmed Bughra
     <br />
     <a href="https://www.patika.dev/bootcamp/softtech-java-spring-bootcamp"><strong>More about bootcamp »</strong></a>
     <br />
