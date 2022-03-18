@@ -24,11 +24,11 @@
 # Table of contents
 
 * [About The Project](#About-Graduation-Project)
-    + [Project Requirements](#Project Requirements)
-* [Project Prepration Documents](#Project Prepration Documents)
-* [Project Structure](#Project Structure)
+    + [Project Requirements](#Project-Requirements)
+* [Project Prepration Documents](#Project-Prepration-Documents)
+* [Project Structure](#Project-Structure)
     + [Diagram](#Diagram)
-    + [File Structure](#File Structure)
+    + [File Structure](#File-Structure)
 * [Reference](#Reference)
     + [Articles](#Articles)
     + [Videos](#Videos)
