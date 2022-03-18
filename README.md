@@ -61,8 +61,8 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 
 ### Diagram
 ### Demo
-###Swagger Documentation
-###Technologies
+### Swagger Documentation
+### Technologies
 - Spring
 - PostgreSQL
 - Hibernate
@@ -72,10 +72,10 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 - Docker
 - AWS EC2
 
-###Dependencies
+### Dependencies
 I used Maven as a dependency management framework. Here is how I configured the pom.xml file:
 <details>
-<summary>Show more</summary>
+<summary>*Show more*</summary>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -136,7 +136,7 @@ I used Maven as a dependency management framework. Here is how I configured the 
 
 ### File Structure
 <details>
-<summary>Show more</summary>
+<summary>*Show more*</summary>
 
 ```bash
 tree /f
@@ -247,8 +247,7 @@ Graduation Project
 
 ### Videos
 
-## Acknowledgments
-
+## Thank you all !!!
 ### To Patika
 Many thanks to the team of <img src='https://user-images.githubusercontent.com/49093196/123759976-178bdc00-d8c9-11eb-84e2-0fd001083756.png' alt='patika' height='20'> who organized this bootcamp. I believe they are now doing very god job for Turkey's technological development. <strong>Thank You for your efforts!</strong>👏🏻
 ### To Softtech
