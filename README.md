@@ -21,6 +21,26 @@
 
 
 
+# Table of contents
+
+* [About The Project](#About-Graduation-Project)
+    + [Project Requirements](#Project Requirements)
+* [Project Prepration Documents](#Project Prepration Documents)
+* [Project Structure](#Project Structure)
+    + [Diagram](#Diagram)
+    + [File Structure](#File Structure)
+* [Reference](#Reference)
+    + [Articles](#Articles)
+    + [Videos](#Videos)
+* [Acknowledgments](#Acknowledgments)
+    + [Patika](#Patika)
+    + [Softtech](#Softtech)
+    + [Teacher](#Teacher)
+    + [Attendees](#Attendees)
+* [License](#license)
+* [Contact me](#linkedIn)
+
+
 
 # About Graduation Project
 This is a graduation project for Softtech Spring Bootcamp. The Graduation Project was given at the end of the 5th week in this bootcamp. It is a project that'll ensures that the subjects we learned during this bootcamp are reinforced with the technologies used by the sponsor company Softtech. [<img src='https://softtech.com.tr/wp-content/uploads/2017/12/standart-logo.png' alt='softtech' height='20'>](https://softtech.com.tr/) .
