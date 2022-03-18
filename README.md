@@ -20,7 +20,6 @@
 </div>
 
 
-
 # Table of contents
 
 * [About The Project](#About-The-Graduation-Project)
@@ -58,7 +57,6 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 
 ## Project Structure
 
-
 ### Diagram
 ### Demo
 ### Swagger Documentation
@@ -66,7 +64,7 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 - Spring
 - PostgreSQL
 - Hibernate
-- Thyeleaf
+- Thymeleaf
 - HTML
 - Bootstrap 
 - Docker
@@ -75,7 +73,7 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 ### Dependencies
 I used Maven as a dependency management framework. Here is how I configured the pom.xml file:
 <details>
-<summary>*Show more*</summary>
+<summary><strong>Show more</strong></summary>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -136,7 +134,7 @@ I used Maven as a dependency management framework. Here is how I configured the 
 
 ### File Structure
 <details>
-<summary>*Show more*</summary>
+<summary><strong>Show more</strong></summary>
 
 ```bash
 tree /f
