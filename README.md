@@ -28,6 +28,10 @@
 * [Project Prepration Documents](#Project-Prepration-Documents)
 * [Project Structure](#Project-Structure)
     + [Diagram](#Diagram)
+    + [Demo](#demo)
+    + [Swagger Documentation](#Swagger-Documentation)
+    + [Technologies](#Technologies)
+    + [Dependencies](#Dependencies)
     + [File Structure](#File-Structure)
 * [Reference](#Reference)
     + [Articles](#Articles)
@@ -54,7 +58,13 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 
 ## Project Structure
 
+
 ### Diagram
+### Demo
+###Swagger Documentation
+###Technologies
+###Dependencies
+
 
 ### File Structure
 
