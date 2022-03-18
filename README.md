@@ -61,9 +61,9 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 
 ### Diagram
 ### Demo
-###Swagger Documentation
-###Technologies
-###Dependencies
+### Swagger Documentation
+### Technologies
+### Dependencies
 I used maven for dependency management framework. Here is how I configured the pom.xml file 
 <details>
 <summary>Show more</summary>
