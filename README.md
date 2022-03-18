@@ -61,10 +61,19 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 
 ### Diagram
 ### Demo
-### Swagger Documentation
-### Technologies
-### Dependencies
-I used maven for dependency management framework. Here is how I configured the pom.xml file 
+###Swagger Documentation
+###Technologies
+- Spring
+- PostgreSQL
+- Hibernate
+- Thyeleaf
+- HTML
+- Bootstrap 
+- Docker
+- AWS EC2
+
+###Dependencies
+I used Maven as a dependency management framework. Here is how I configured the pom.xml file:
 <details>
 <summary>Show more</summary>
 
@@ -241,13 +250,11 @@ Graduation Project
 ## Acknowledgments
 
 ### To Patika
-### To ofttech
+Many thanks to the team of <img src='https://user-images.githubusercontent.com/49093196/123759976-178bdc00-d8c9-11eb-84e2-0fd001083756.png' alt='patika' height='20'> who organized this bootcamp. I believe they are now doing very god job for Turkey's technological development. <strong>Thank You for your efforts!</strong>👏🏻
+### To Softtech
+Special thanks to [<img src='https://softtech.com.tr/wp-content/uploads/2017/12/standart-logo.png' alt='softtech' height='20'>](https://softtech.com.tr/) for sponsorship. I hope you will succeed in your business🎯 to become the biggest IT company in Turkey.
 ### To Teacher
+I would like to express my respect and appreciation to our teacher, <strong>*Sadık Bahadır Memiş*</strong>, who trained us with his valuable experience and help us to learn this wonderful technology Spring. 👏🏻
 ### To Attendees
-
+Thank you everyone for participating. It was a pleasure to be in the same bootcamp with you. <strong>I wish you success in your life!💪</strong> I hope there will be a chance to continue our career together in the same development team.☕️
 ## Contact me
-| me       | me              | me                                                                                   |
-| ------------------ | ----------------------- | ---------------------------------------------------------------------------------------------- |
-| ***Any***          | **[ahmed]**         | `sample`                                                                |
-| *Any*              | [me]           | `I`                                                          |
-
