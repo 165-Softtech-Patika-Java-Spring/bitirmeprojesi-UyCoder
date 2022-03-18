@@ -5,12 +5,12 @@
     <img src="https://softtech.com.tr/wp-content/uploads/2017/12/standart-logo.png" alt="Logo" height="80">
   </a>
 
-  <h3 align="center">Softtech Spring Bootcamp</h3>
+  <h3 align="center">Softtech Spring Bootcamp Guraduation Project</h3>
 
   <p align="center">
     Guraduation Project
     <br />
-    <a href="https://github.com/165-Softtech-Patika-Java-Spring/bitirmeprojesi-UyCoder/blob/main/BitirmeProjesiTalepleri.md"><strong>Project Requirements (In Turkish) »</strong></a>
+    <a href="https://www.patika.dev/bootcamp/softtech-java-spring-bootcamp"><strong>More about bootcamp »</strong></a>
     <br />
     <br />
     <a href="https://github.com/165-Softtech-Patika-Java-Spring/bitirmeprojesi-UyCoder/blob/main/BitirmeProjesiTalepleri.md">Project Requirements</a>
