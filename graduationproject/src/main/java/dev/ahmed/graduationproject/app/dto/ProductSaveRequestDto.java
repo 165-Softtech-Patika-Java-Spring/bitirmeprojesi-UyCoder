@@ -13,6 +13,6 @@ import java.math.BigDecimal;
 @Data
 public class ProductSaveRequestDto {
     private String productName;
-    private Long categoryId;
+    private String categoryName;
     private BigDecimal priceWithoutKdv;
 }

@@ -36,7 +36,7 @@ public class CategoryController {
         return ResponseEntity.ok(category);
     }
 
-    // urun kategoriyisinin kdv orani gunzellenecek
+    // kategoriyisinin kdv orani guncellenecek !!!!!!!!!! eski finalPrice lar da guncellenecek!!!! Scheduler????
     @PutMapping("/{id}/kdv")
     @Operation(tags = "Category Controller", description = "Update Category KDV Rate", summary = "Update KDV Rate")
     public ResponseEntity updateKdv(@PathVariable Long id, @RequestBody CategoryUpdateKdvDto categoryUpdateKdv){

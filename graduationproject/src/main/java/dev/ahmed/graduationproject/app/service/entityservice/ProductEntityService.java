@@ -49,28 +49,40 @@ public class ProductEntityService {
         return productDao.save(newProduct);
     }
 
-    public Product createProduct(Product newProduct){
-        Optional<Product> productByName = productDao.findAllByProductName(newProduct.getProductName());
-        if (productByName.isPresent()){
-            throw new ProductAlreadyExistsException("Product already exists with the name: " + newProduct.getProductName());
-        }
-
-        return productDao.save(newProduct);
-    }
+//    public Product createProduct(Product newProduct){
+//        Optional<Product> productByName = productDao.findAllByProductName(newProduct.getProductName());
+//        if (productByName.isPresent()){
+//            throw new ProductAlreadyExistsException("Product already exists with the name: " + newProduct.getProductName());
+//        }
+//
+//        return productDao.save(newProduct);
+//    }
 
     public void updatesProductById(Long id, ProductSaveRequestDto productSaveRequestDto){
         Product oldProduct = getProductById(id);
+        Category fromDbCategory = categoryDao.findCategoryByCategoryName(productSaveRequestDto.getCategoryName());
+
         oldProduct.setProductName(productSaveRequestDto.getProductName());
-//        oldProduct.setCategoryId(productSaveRequestDto.getCategoryId());
+        oldProduct.setCategoryId(fromDbCategory.getId());
         oldProduct.setPriceWithoutKdv(productSaveRequestDto.getPriceWithoutKdv());
-//        oldProduct.setKdvRate(productSaveRequestDto.getKdvRate());
-//        oldProduct.setFinalPrice(productSaveRequestDto.getFinalPrice());
+        oldProduct.setKdvRate(fromDbCategory.getKdvRate());
+        oldProduct.setFinalPrice(productSaveRequestDto.getPriceWithoutKdv()
+                .multiply(BigDecimal.valueOf(fromDbCategory.getKdvRate()))
+                .divide(BigDecimal.valueOf(100))
+                .add(oldProduct.getPriceWithoutKdv()));
         productDao.save(oldProduct);
     }
 
     public void updatesPriceById(Long id, ProductUpdatePriceDto productUpdatePriceDto){
         Product oldProduct = getProductById(id);
         oldProduct.setPriceWithoutKdv(productUpdatePriceDto.getPriceWithoutKdv());
+
+        Optional<Category> fromDbCategory = categoryDao.findCategoryById(oldProduct.getCategoryId());
+
+        oldProduct.setFinalPrice(productUpdatePriceDto.getPriceWithoutKdv()
+                .multiply(BigDecimal.valueOf(fromDbCategory.get().getKdvRate()))
+                .divide(BigDecimal.valueOf(100))
+                .add(oldProduct.getPriceWithoutKdv()));
         productDao.save(oldProduct);
     }
 

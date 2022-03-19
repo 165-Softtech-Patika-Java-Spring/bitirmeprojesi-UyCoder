@@ -28,40 +28,25 @@ public class ProductController {
 
     private final ProductEntityService productEntityService;
 
-
-    // Ürünlerin fiyatları güncellenebilir.
-    @PutMapping("/{id}/price")
-    @Operation(tags = "Product Controller", description = "Update Product Price", summary = "Update Product Price")
-    public ResponseEntity updatePriceById(@PathVariable Long id, @RequestBody ProductUpdatePriceDto productUpdatePriceDto){
-        productEntityService.updatesPriceById(id, productUpdatePriceDto);
-        return new ResponseEntity<>(OK);
-    }
-
-    // Sisteme yeni Product tanımlanabilir
-    // Tüm ürünler listelenebilmelidir.
-    // Ürün türlerine göre ürünler listelenebilmelidir.
-    // Belirli bir fiyat aralığındaki ürünler listelenebilmelidir.
-    // Ürün türlerine göre aşağıdaki gibi detay veri içeren bir bilgilendirme alınabilmelidir
-
-    // Sisteme yeni urun tanımlanabilir
+    // Sisteme yeni urun tanımlanabilir ================= cok guzel calisiyor :)
     @PostMapping
     @Operation(tags = "Product Controller", description = "Craate New Product", summary = "Create New Product")
     public ResponseEntity createProduct(@RequestBody ProductDto productDto) {
         Product product = productEntityService.insertProduct(productDto);
         return ResponseEntity.ok(product);
     }
-//    @PostMapping
-//    @Operation(tags = "Product Controller", description = "Craate New Product", summary = "Create New Product")
-//    public ResponseEntity createProduct(@RequestBody Product product) {
-//        product = productEntityService.createProduct(product);
-//        return ResponseEntity.ok(product);
-//    }
-//
 
+    // Ürünlerin fiyatları güncellenebilir. ================= cok guzel calisiyor :)
+    @PutMapping("/{id}/price")
+    @Operation(tags = "Product Controller", description = "Update Price", summary = "Update Price")
+    public ResponseEntity updatePriceById(@PathVariable Long id, @RequestBody ProductUpdatePriceDto productUpdatePriceDto){
+        productEntityService.updatesPriceById(id, productUpdatePriceDto);
+        return new ResponseEntity<>(OK);
+    }
 
-    // Product güncellenebilir
+    // urunler güncellenebilir  (urun adi, categorisi ve KDV'siz fiyati)  ================= cok guzel calisiyor :)
     @PutMapping("/{id}")
-    @Operation(tags = "Product Controller", description = "Update Product", summary = "Update Product")
+    @Operation(tags = "Product Controller", description = "Update Product Name, Category and Price", summary = "Update Product")
     public ResponseEntity<Void> updateProductById(@PathVariable Long id, @RequestBody ProductSaveRequestDto productSaveRequestDto){
         productEntityService.updatesProductById(id, productSaveRequestDto);
         return new ResponseEntity<>(OK);
@@ -74,5 +59,17 @@ public class ProductController {
         productEntityService.deleteProduct(id);
         return ResponseEntity.ok(Void.TYPE);
     }
+
+
+    // Tüm ürünler listelenebilmelidir.
+    // Ürün türlerine göre ürünler listelenebilmelidir.
+    // Belirli bir fiyat aralığındaki ürünler listelenebilmelidir.
+    // Ürün türlerine göre aşağıdaki gibi detay veri içeren bir bilgilendirme alınabilmelidir
+
+
+
+
+
+
 
 }
