@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Home page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min-jsf.css}"/>
+</head>
+
+<body>
+<div><h1>Welcome to Product page</h1></div>
+<div class="p-2">
+    <a class ="h2" th:href="@{/categories}">List Categories</a>
+</div>
+<div class="p-2">
+    <a class="h2" th:href="@{/categories/new}">Create Categories</a>
+</div>
+<div class="p-2">
+    <a class="h2" th:href="@{/products}">List Products</a>
+</div>
+<div class="p-2">
+    <a class="h2" th:href="@{/products/new}">Create Products</a>
+</div>
+
+<div>
+    <a class="h2" href="http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config">
+        <img src="https://miro.medium.com/max/818/1*zc-LgogGtr7fFHF9e1M8wA.png" width="200">
+    </a>
+</div>
+
+</body>
+</html>

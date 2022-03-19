@@ -2,17 +2,14 @@ package dev.ahmed.graduationproject.app.dto;
 
 import lombok.Data;
 
-import javax.persistence.Column;
 import java.math.BigDecimal;
 
 /**
  * @Author Ahmed Bughra
- * @Created 3/17/2022 - 2:02 AM
+ * @Created 3/19/2022 - 10:30 PM
  * @Project bitirmeprojesi-UyCoder
  */
 @Data
-public class ProductSaveRequestDto {
-    private String productName;
-    private Long categoryId;
+public class ProductUpdatePriceDto {
     private BigDecimal priceWithoutKdv;
 }

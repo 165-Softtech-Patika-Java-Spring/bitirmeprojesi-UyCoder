@@ -1,9 +1,11 @@
 package dev.ahmed.graduationproject.app.dao;
 
 
-import dev.ahmed.graduationproject.app.entity.ProductCategory;
+import dev.ahmed.graduationproject.app.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 /**
  * @Author Ahmed Bughra
@@ -12,5 +14,8 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface ProductCategoryDao extends JpaRepository<ProductCategory, Long> {
+public interface CategoryDao extends JpaRepository<Category, Long> {
+    Optional<Category> findCategoryById(Long id);
+    Optional<Category> findAllByCategoryName(String categoryName);
+
 }

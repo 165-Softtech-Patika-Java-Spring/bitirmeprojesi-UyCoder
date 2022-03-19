@@ -25,7 +25,7 @@ public interface UserMapper {
 //    User convertToUser(UserSaveRequestDto userSaveRequestDto);
     User convertToUser(UserDto userDto);
     User convertToUser(UserUpdateRequestDto userUpdateRequestDto);
-    List<UserDto> convertToUserDtoList(List<User> userList);
+//    List<UserDto> convertToUserDtoList(List<User> userList);
 
     User convertToUser(Optional<UserDto> userDto);
 //    UserDto convertToUser(Optional<User> user);

@@ -12,18 +12,19 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "PRODUCT_CATEGORY")
+@Table(name = "CATEGORIES")
 @Getter
 @Setter
-public class ProductCategory {
+public class Category {
 
     @Id
-    @SequenceGenerator(name = "Product" , sequenceName = "PRODUCT_ID_SEQ")
-    @GeneratedValue(generator = "Product")
+    @SequenceGenerator(name = "Category" , sequenceName = "CATEGORY_ID_SEQ")
+    @GeneratedValue(generator = "Category")
     private Long id;
 
     @Column(name = "CATEGORY_NAME")
     private String categoryName;
+
 
     @Column(name = "KDV_RATE")
     private Double kdvRate;

@@ -1,10 +1,12 @@
 package dev.ahmed.graduationproject.app.entity;
 
+import jdk.jfr.Category;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Locale;
 
 /**
  * @Author Ahmed Bughra
@@ -12,7 +14,7 @@ import java.math.BigDecimal;
  * @Project bitirmeprojesi-UyCoder
  */
 @Entity
-@Table(name = "PRODUCT")
+@Table(name = "PRODUCTS")
 @Getter
 @Setter
 public class Product {
@@ -25,7 +27,7 @@ public class Product {
     @Column(name = "PRODUCT_NAME", length = 30, nullable = false)
     private String productName;
 
-    @Column(name = "ID_CATEGORY", nullable = false)
+    @Column(name = "ID_CATEGORY")
     private Long categoryId;
 
     @Column(name = "PRICE_WITHOUT_KDV", nullable = false)

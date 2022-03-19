@@ -1,5 +1,6 @@
 package dev.ahmed.graduationproject.app.dao;
 
+import dev.ahmed.graduationproject.app.dto.ProductDto;
 import dev.ahmed.graduationproject.app.entity.Product;
 import dev.ahmed.graduationproject.app.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,4 +19,5 @@ public interface ProductDao extends JpaRepository<Product, Long> {
     Optional<Product> findProductById(Long id);
 
     Optional<Product> findAllByProductName(String userName);
+
 }

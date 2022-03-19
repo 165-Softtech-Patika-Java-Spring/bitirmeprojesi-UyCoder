@@ -7,12 +7,12 @@ import java.math.BigDecimal;
 
 /**
  * @Author Ahmed Bughra
- * @Created 3/17/2022 - 2:02 AM
+ * @Created 3/14/2022 - 11:39 PM
  * @Project bitirmeprojesi-UyCoder
  */
 @Data
-public class ProductSaveRequestDto {
+public class ProductDto {
     private String productName;
-    private Long categoryId;
+    private String categoryName;
     private BigDecimal priceWithoutKdv;
 }

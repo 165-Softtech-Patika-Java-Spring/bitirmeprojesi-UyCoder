@@ -1,6 +1,8 @@
 package dev.ahmed.graduationproject.app.controller;
 
+import dev.ahmed.graduationproject.app.dto.ProductDto;
 import dev.ahmed.graduationproject.app.dto.ProductSaveRequestDto;
+import dev.ahmed.graduationproject.app.dto.ProductUpdatePriceDto;
 import dev.ahmed.graduationproject.app.dto.UserSaveRequestDto;
 import dev.ahmed.graduationproject.app.entity.Product;
 import dev.ahmed.graduationproject.app.entity.User;
@@ -27,15 +29,37 @@ public class ProductController {
     private final ProductEntityService productEntityService;
 
 
-    // Sisteme yeni Product tanımlanabilir
-    @PostMapping
-    @Operation(tags = "Product Controller", description = "Craate New Product", summary = "Create New Product")
-    public ResponseEntity createProduct(@RequestBody Product product) {
-        product = productEntityService.createProduct(product);
-        return ResponseEntity.ok(product);
+    // Ürünlerin fiyatları güncellenebilir.
+    @PutMapping("/{id}/price")
+    @Operation(tags = "Product Controller", description = "Update Product Price", summary = "Update Product Price")
+    public ResponseEntity updatePriceById(@PathVariable Long id, @RequestBody ProductUpdatePriceDto productUpdatePriceDto){
+        productEntityService.updatesPriceById(id, productUpdatePriceDto);
+        return new ResponseEntity<>(OK);
     }
 
-    // Product güncellenebilir // calismiyor...
+    // Sisteme yeni Product tanımlanabilir
+    // Tüm ürünler listelenebilmelidir.
+    // Ürün türlerine göre ürünler listelenebilmelidir.
+    // Belirli bir fiyat aralığındaki ürünler listelenebilmelidir.
+    // Ürün türlerine göre aşağıdaki gibi detay veri içeren bir bilgilendirme alınabilmelidir
+
+    // Sisteme yeni urun tanımlanabilir
+    @PostMapping
+    @Operation(tags = "Product Controller", description = "Craate New Product", summary = "Create New Product")
+    public ResponseEntity createProduct(@RequestBody ProductDto productDto) {
+        Product product = productEntityService.insertProduct(productDto);
+        return ResponseEntity.ok(product);
+    }
+//    @PostMapping
+//    @Operation(tags = "Product Controller", description = "Craate New Product", summary = "Create New Product")
+//    public ResponseEntity createProduct(@RequestBody Product product) {
+//        product = productEntityService.createProduct(product);
+//        return ResponseEntity.ok(product);
+//    }
+//
+
+
+    // Product güncellenebilir
     @PutMapping("/{id}")
     @Operation(tags = "Product Controller", description = "Update Product", summary = "Update Product")
     public ResponseEntity<Void> updateProductById(@PathVariable Long id, @RequestBody ProductSaveRequestDto productSaveRequestDto){
