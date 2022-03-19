@@ -1,8 +1,6 @@
 package dev.ahmed.graduationproject.app.dto;
 
 import lombok.Data;
-
-import javax.persistence.Column;
 import java.math.BigDecimal;
 
 /**

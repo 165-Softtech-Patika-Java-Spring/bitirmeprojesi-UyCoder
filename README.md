@@ -58,7 +58,8 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 ## Project Structure
 ![projectStrcuture](https://user-images.githubusercontent.com/50663127/159141313-288e892f-14ac-4b64-ab2e-5816c0006e0c.PNG)
 
-### Diagram
+### Databse, Tables and columns
+I used PostgreSQL for the Databse of this project and here is the tables and columns:
 ![DatabaseAndColumns](https://user-images.githubusercontent.com/50663127/159141315-c19151ea-1980-4701-bfd4-03bb8249ea58.PNG)
 
 ### Demo

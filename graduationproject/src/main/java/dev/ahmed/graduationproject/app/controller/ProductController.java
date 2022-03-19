@@ -28,7 +28,7 @@ public class ProductController {
 
     private final ProductEntityService productEntityService;
 
-    // Sisteme yeni urun tanımlanabilir ================= cok guzel calisiyor :)
+    // Sisteme yeni urun tanımlanabilir == Bitti
     @PostMapping
     @Operation(tags = "Product Controller", description = "Craate New Product", summary = "Create New Product")
     public ResponseEntity createProduct(@RequestBody ProductDto productDto) {
@@ -36,7 +36,7 @@ public class ProductController {
         return ResponseEntity.ok(product);
     }
 
-    // Ürünlerin fiyatları güncellenebilir. ================= cok guzel calisiyor :)
+    // Ürünlerin fiyatları güncellenebilir.  == Bitti
     @PutMapping("/{id}/price")
     @Operation(tags = "Product Controller", description = "Update Price", summary = "Update Price")
     public ResponseEntity updatePriceById(@PathVariable Long id, @RequestBody ProductUpdatePriceDto productUpdatePriceDto){
@@ -44,7 +44,7 @@ public class ProductController {
         return new ResponseEntity<>(OK);
     }
 
-    // urunler güncellenebilir  (urun adi, categorisi ve KDV'siz fiyati)  ================= cok guzel calisiyor :)
+    // urunler güncellenebilir  (urun adi, categorisi ve KDV'siz fiyati)   == Bitti
     @PutMapping("/{id}")
     @Operation(tags = "Product Controller", description = "Update Product Name, Category and Price", summary = "Update Product")
     public ResponseEntity<Void> updateProductById(@PathVariable Long id, @RequestBody ProductSaveRequestDto productSaveRequestDto){
@@ -52,14 +52,13 @@ public class ProductController {
         return new ResponseEntity<>(OK);
     }
 
-    // Product silinebilir.
+    // Product silinebilir.  == Bitti
     @DeleteMapping("/{id}")
     @Operation(tags = "Product Controller", description = "Delete Product", summary = "Delete Product")
     public ResponseEntity deleteProduct(@PathVariable Long id){
         productEntityService.deleteProduct(id);
         return ResponseEntity.ok(Void.TYPE);
     }
-
 
     // Tüm ürünler listelenebilmelidir.
     // Ürün türlerine göre ürünler listelenebilmelidir.
