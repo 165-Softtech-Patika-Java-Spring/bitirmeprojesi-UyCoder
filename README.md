@@ -77,57 +77,127 @@ I used Maven as a dependency management framework. Here is how I configured the 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.6.4</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>dev.ahmed</groupId>
+  <artifactId>graduationproject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>graduationproject</name>
+  <description>graduationproject</description>
+  <properties>
+    <java.version>17</java.version>
+    <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
 
-    <groupId>dev.ahmed</groupId>
-    <artifactId>ahmed</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-hateoas</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${org.mapstruct.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct-processor</artifactId>
+      <version>${org.mapstruct.version}</version>
+    </dependency>
 
-    </dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
 
-    <build>
-        <testResources>
-            <testResource>
-                <directory>src/test/java</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </testResource>
-        </testResources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.0</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <compilerArgument>-Werror</compilerArgument>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <version>1.5.13</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf-spring5</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>bootstrap</artifactId>
+      <version>4.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>webjars-locator-core</artifactId>
+    </dependency>
+
+    <!--        <dependency>-->
+    <!--            <groupId>org.springframework.boot</groupId>-->
+    <!--            <artifactId>spring-boot-starter-security</artifactId>-->
+    <!--        </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>io.jsonwebtoken</groupId>-->
+    <!--            <artifactId>jjwt</artifactId>-->
+    <!--            <version>0.9.1</version>-->
+    <!--        </dependency>-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
+
 ```
 </details>
 
@@ -139,101 +209,266 @@ I used Maven as a dependency management framework. Here is how I configured the 
 ```bash
 tree /f
 Graduation Project
-│   .gitignore
-│   demo.iml
-│   mvnw
-│   mvnw.cmd
-│   pom.xml
-│   postman.json
-│   README.md
+│  BitirmeProjesiHazirlikDokumani.pdf
+│  BitirmeProjesiTalepleri.md
+│  README.md
 │
-├───.idea
-│   │   .gitignore
-│   │   .name
-│   │   compiler.xml
-│   │   encodings.xml
-│   │   jarRepositories.xml
-│   │   misc.xml
-│   │   modules.xml
-│   │   workspace.xml
-│   │
-│   ├───codeStyles
-│   │       codeStyleConfig.xml
-│   │       Project.xml
-│   │
-│   └───libraries
+├─.idea
+│  │  .gitignore
+│  │
+│  ├─dataSources
+│  │  │  13f2fc53-6397-4739-984e-1c4b103ec0e3.xml
+│  │  │
+│  │  └─13f2fc53-6397-4739-984e-1c4b103ec0e3
+│  │      └─storage_v2
+│  │          └─_src_
+│  │              └─database
+│  │                  │  finalproject.4xihCA.meta
+│  │                  │
+│  │                  └─finalproject.4xihCA
+│  │                      └─schema
+│  │                              information_schema.FNRwLQ.meta
+│  │                              pg_catalog.0S1ZNQ.meta
+│  │                              public.abK9xQ.meta
+│  │
+│  └─libraries
 │
-├───.mvn
-│   └───wrapper
-│           maven-wrapper.jar
-│           maven-wrapper.properties
-│           MavenWrapperDownloader.java
-│
-├───src
-│   ├───main
-│   │   ├───java
-│   │   │   │   Notes-For-Part-6.txt
-│   │   │   │   Notes-For_Part-7.txt
-│   │   │   │
-│   │   │   └───com
-│   │   │       └───uycoder
-│   │   │           └───demo
-│   │   │               │   DemoApplication.java
-│   │   │               │
-│   │   │               ├───beans
-│   │   │               │       Country.java
-│   │   │               │
-│   │   │               ├───controllers
-│   │   │               │       AddResponse.java
-│   │   │               │       CountryController.java
-│   │   │               │
-│   │   │               ├───repository
-│   │   │               │       CountryRepository.java
-│   │   │               │
-│   │   │               └───services
-│   │   │                       Capture.PNG
-│   │   │                       CountryService.java
-│   │   │
-│   │   └───resources
-│   │           application.properties
-│   │           banner.txt
-│   │
-│   └───test
-│       └───java
-│           └───com
-│               └───uycoder
-│                   └───demo
-│                           DemoApplicationTests.java
-│
-└───target
-    ├───classes
-    │   └───com
-    │       └───uycoder
-    │           └───demo
-    │               │   DemoApplication.class
-    │               │
-    │               ├───beans
-    │               │       Country.class
-    │               │
-    │               ├───controllers
-    │               │       AddResponse.class
-    │               │       CountryController.class
-    │               │
-    │               ├───repository
-    │               │       CountryRepository.class
-    │               │
-    │               └───services
-    │                       CountryService.class
+└─graduationproject
+    │  .gitignore
+    │  graduationproject.iml
+    │  HELP.md
+    │  mvnw
+    │  mvnw.cmd
+    │  pom.xml
     │
-    ├───generated-sources
-    │   └───annotations
-    ├───generated-test-sources
-    │   └───test-annotations
-    └───test-classes
-        └───com
-            └───uycoder
-                └───demo
-                        DemoApplicationTests.class
+    ├─.mvn
+    │  └─wrapper
+    │          maven-wrapper.jar
+    │          maven-wrapper.properties
+    │
+    ├─src
+    │  ├─main
+    │  │  ├─java
+    │  │  │  └─dev
+    │  │  │      └─ahmed
+    │  │  │          └─graduationproject
+    │  │  │              │  GraduationprojectApplication.java
+    │  │  │              │
+    │  │  │              ├─app
+    │  │  │              │  ├─config
+    │  │  │              │  ├─controller
+    │  │  │              │  │      CategoryController.java
+    │  │  │              │  │      ProductController.java
+    │  │  │              │  │      UserController.java
+    │  │  │              │  │
+    │  │  │              │  ├─converter
+    │  │  │              │  │      UserMapper.java
+    │  │  │              │  │
+    │  │  │              │  ├─dao
+    │  │  │              │  │      CategoryDao.java
+    │  │  │              │  │      ProductDao.java
+    │  │  │              │  │      UserDao.java
+    │  │  │              │  │
+    │  │  │              │  ├─dto
+    │  │  │              │  │      CategoryDto.java
+    │  │  │              │  │      CategoryUpdateKdvDto.java
+    │  │  │              │  │      ProductDto.java
+    │  │  │              │  │      ProductSaveRequestDto.java
+    │  │  │              │  │      ProductUpdatePriceDto.java
+    │  │  │              │  │      UserDto.java
+    │  │  │              │  │      UserResponseDto.java
+    │  │  │              │  │      UserSaveRequestDto.java
+    │  │  │              │  │      UserUpdateRequestDto.java
+    │  │  │              │  │
+    │  │  │              │  ├─entity
+    │  │  │              │  │      Category.java
+    │  │  │              │  │      Product.java
+    │  │  │              │  │      User.java
+    │  │  │              │  │
+    │  │  │              │  ├─enums
+    │  │  │              │  ├─exception
+    │  │  │              │  │      CategoryAlreadyExistsException.java
+    │  │  │              │  │      CategoryNotFoundException.java
+    │  │  │              │  │      ProductAlreadyExistsException.java
+    │  │  │              │  │      ProductNotFoundException.java
+    │  │  │              │  │      UserAlreadyExistsException.java
+    │  │  │              │  │      UserNotFoundException.java
+    │  │  │              │  │
+    │  │  │              │  ├─service
+    │  │  │              │  │  │  Service.java
+    │  │  │              │  │  │
+    │  │  │              │  │  └─entityservice
+    │  │  │              │  │          CategoryEntityService.java
+    │  │  │              │  │          ProductEntityService.java
+    │  │  │              │  │          UserEntityService.java
+    │  │  │              │  │
+    │  │  │              │  └─util
+    │  │  │              └─gen
+    │  │  │                  ├─dto
+    │  │  │                  │      RestResponse.java
+    │  │  │                  │
+    │  │  │                  ├─entity
+    │  │  │                  │      BaseAdditionalFields.java
+    │  │  │                  │      BaseEntity.java
+    │  │  │                  │      BaseModel.java
+    │  │  │                  │
+    │  │  │                  ├─enums
+    │  │  │                  │      BaseErrorMessage.java
+    │  │  │                  │      GenErrorMessage.java
+    │  │  │                  │      GenStatusType.java
+    │  │  │                  │
+    │  │  │                  ├─exception
+    │  │  │                  │      GenCustomizedResponseEntityExceptionHandler.java
+    │  │  │                  │      GenExceptionResponse.java
+    │  │  │                  │
+    │  │  │                  ├─exceptions
+    │  │  │                  │      GenBusinessException.java
+    │  │  │                  │      ItemNotFoundException.java
+    │  │  │                  │
+    │  │  │                  ├─service
+    │  │  │                  │      BaseEntityService.java
+    │  │  │                  │
+    │  │  │                  └─util
+    │  │  │                          DateUtil.java
+    │  │  │
+    │  │  └─resources
+    │  │      │  application.properties
+    │  │      │  banner.txt
+    │  │      │
+    │  │      ├─static
+    │  │      │  │  index.html
+    │  │      │  │  style2.css
+    │  │      │  │
+    │  │      │  ├─homepage
+    │  │      │  │      homepage.html
+    │  │      │  │
+    │  │      │  └─register
+    │  │      │          register.html
+    │  │      │          style3.css
+    │  │      │
+    │  │      └─templates
+    │  └─test
+    │      └─java
+    │          └─dev
+    │              └─ahmed
+    │                  └─graduationproject
+    │                          GraduationprojectApplicationTests.java
+    │
+    └─target
+        ├─classes
+        │  │  application.properties
+        │  │  banner.txt
+        │  │
+        │  ├─dev
+        │  │  └─ahmed
+        │  │      └─graduationproject
+        │  │          │  GraduationprojectApplication.class
+        │  │          │
+        │  │          ├─app
+        │  │          │  ├─controller
+        │  │          │  │      CategoryController.class
+        │  │          │  │      ProductController.class
+        │  │          │  │      UserController.class
+        │  │          │  │
+        │  │          │  ├─converter
+        │  │          │  │      UserMapper.class
+        │  │          │  │      UserMapperImpl.class
+        │  │          │  │
+        │  │          │  ├─dao
+        │  │          │  │      CategoryDao.class
+        │  │          │  │      ProductDao.class
+        │  │          │  │      UserDao.class
+        │  │          │  │
+        │  │          │  ├─dto
+        │  │          │  │      CategoryDto.class
+        │  │          │  │      CategoryUpdateKdvDto.class
+        │  │          │  │      ProductDto.class
+        │  │          │  │      ProductSaveRequestDto.class
+        │  │          │  │      ProductUpdatePriceDto.class
+        │  │          │  │      UserDto.class
+        │  │          │  │      UserResponseDto.class
+        │  │          │  │      UserSaveRequestDto.class
+        │  │          │  │      UserUpdateRequestDto.class
+        │  │          │  │
+        │  │          │  ├─entity
+        │  │          │  │      Category.class
+        │  │          │  │      Product.class
+        │  │          │  │      User.class
+        │  │          │  │
+        │  │          │  ├─exception
+        │  │          │  │      CategoryAlreadyExistsException.class
+        │  │          │  │      CategoryNotFoundException.class
+        │  │          │  │      ProductAlreadyExistsException.class
+        │  │          │  │      ProductNotFoundException.class
+        │  │          │  │      UserAlreadyExistsException.class
+        │  │          │  │      UserNotFoundException.class
+        │  │          │  │
+        │  │          │  └─service
+        │  │          │      │  Service.class
+        │  │          │      │
+        │  │          │      └─entityservice
+        │  │          │              CategoryEntityService.class
+        │  │          │              ProductEntityService.class
+        │  │          │              UserEntityService.class
+        │  │          │
+        │  │          ├─converter
+        │  │          │      UserMapperImpl.class
+        │  │          │
+        │  │          └─gen
+        │  │              ├─dto
+        │  │              │      RestResponse.class
+        │  │              │
+        │  │              ├─entity
+        │  │              │      BaseAdditionalFields.class
+        │  │              │      BaseEntity.class
+        │  │              │      BaseModel.class
+        │  │              │
+        │  │              ├─enums
+        │  │              │      BaseErrorMessage.class
+        │  │              │      GenErrorMessage.class
+        │  │              │      GenStatusType.class
+        │  │              │
+        │  │              ├─exception
+        │  │              │      GenCustomizedResponseEntityExceptionHandler.class
+        │  │              │      GenExceptionResponse.class
+        │  │              │
+        │  │              ├─exceptions
+        │  │              │      GenBusinessException.class
+        │  │              │      ItemNotFoundException.class
+        │  │              │
+        │  │              ├─service
+        │  │              │      BaseEntityService.class
+        │  │              │
+        │  │              └─util
+        │  │                      DateUtil.class
+        │  │
+        │  └─static
+        │      │  index.html
+        │      │  style2.css
+        │      │
+        │      ├─homepage
+        │      │      homepage.html
+        │      │
+        │      └─register
+        │              register.html
+        │              style3.css
+        │
+        ├─generated-sources
+        │  └─annotations
+        │      └─dev
+        │          └─ahmed
+        │              └─graduationproject
+        │                  └─app
+        │                      └─converter
+        │                              UserMapperImpl.java
+        │
+        ├─generated-test-sources
+        │  └─test-annotations
+        └─test-classes
+            └─dev
+                └─ahmed
+                    └─graduationproject
+                            GraduationprojectApplicationTests.class
 
 ```
 
