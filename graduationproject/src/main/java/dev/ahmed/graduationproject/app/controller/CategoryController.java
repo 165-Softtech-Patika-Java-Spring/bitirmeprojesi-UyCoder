@@ -28,7 +28,9 @@ public class CategoryController {
 
 
 
-    // Urun kategorisi tanimlanacak
+
+
+    // Urun kategorisi tanimlanacak == Bitti
     @PostMapping
     @Operation(tags = "Category Controller", description = "Craete New Category", summary = "Create New Category")
     public ResponseEntity createCategory(@RequestBody Category category) {
@@ -36,7 +38,8 @@ public class CategoryController {
         return ResponseEntity.ok(category);
     }
 
-    // kategoriyisinin kdv orani guncellenecek !!!!!!!!!! eski finalPrice lar da guncellenecek!!!! Scheduler????
+    // kategoriyisinin kdv orani guncellenecek !!!!!!!!!!
+    // eski finalPrice lar da guncellenecek!!!! Scheduler???? // @quiry(Update product price)
     @PutMapping("/{id}/kdv")
     @Operation(tags = "Category Controller", description = "Update Category KDV Rate", summary = "Update KDV Rate")
     public ResponseEntity updateKdv(@PathVariable Long id, @RequestBody CategoryUpdateKdvDto categoryUpdateKdv){

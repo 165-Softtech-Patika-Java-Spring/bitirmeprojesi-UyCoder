@@ -8,10 +8,14 @@ import dev.ahmed.graduationproject.app.entity.Product;
 import dev.ahmed.graduationproject.app.entity.User;
 import dev.ahmed.graduationproject.app.service.entityservice.ProductEntityService;
 import dev.ahmed.graduationproject.app.service.entityservice.UserEntityService;
+import dev.ahmed.graduationproject.gen.dto.RestResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 import static org.springframework.http.HttpStatus.OK;
 
@@ -60,15 +64,29 @@ public class ProductController {
         return ResponseEntity.ok(Void.TYPE);
     }
 
-    // Tüm ürünler listelenebilmelidir.
-    // Ürün türlerine göre ürünler listelenebilmelidir.
-    // Belirli bir fiyat aralığındaki ürünler listelenebilmelidir.
-    // Ürün türlerine göre aşağıdaki gibi detay veri içeren bir bilgilendirme alınabilmelidir
+    // Tüm ürünler listelenebilmelidir. == Bitti
+    @GetMapping
+    @Operation(tags = "Product Controller", description = "List All Products", summary = "List All Product")
+    public ResponseEntity getAll(){
+        List<Product> productList = productEntityService.findAll();
+        return ResponseEntity.ok(RestResponse.of(productList));
+    }
 
+    // Ürün türlerine göre ürünler listelenebilmelidir. == Bitti
+    @GetMapping("/{categoryId}")
+    @Operation(tags = "Product Controller", description = "List All Products By Category Id", summary = "List Products By Category Id")
+    public ResponseEntity getAllByCategoryId(@PathVariable Long categoryId){
+        List<Product> productList = productEntityService.getAllByCategoryId(categoryId);
+        return ResponseEntity.ok(RestResponse.of(productList));
+    }
 
-
-
-
-
+    // Belirli bir fiyat aralığındaki ürünler listelenebilmelidir. == Bitti
+    @GetMapping("/find")
+    @Operation(tags = "Product Controller", description = "List Products between two price ", summary = "List Products between two price")
+    public ResponseEntity findAllByFinalPriceBetween(@RequestParam BigDecimal lowprice,
+                                              @RequestParam BigDecimal highPrice) {
+        List<Product> productList = productEntityService.findAllByFinalPriceBetween(lowprice, highPrice);
+        return ResponseEntity.ok(RestResponse.of(productList));
+    }
 
 }

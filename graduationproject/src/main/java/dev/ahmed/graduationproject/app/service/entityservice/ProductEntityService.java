@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -49,15 +50,6 @@ public class ProductEntityService {
         return productDao.save(newProduct);
     }
 
-//    public Product createProduct(Product newProduct){
-//        Optional<Product> productByName = productDao.findAllByProductName(newProduct.getProductName());
-//        if (productByName.isPresent()){
-//            throw new ProductAlreadyExistsException("Product already exists with the name: " + newProduct.getProductName());
-//        }
-//
-//        return productDao.save(newProduct);
-//    }
-
     public void updatesProductById(Long id, ProductSaveRequestDto productSaveRequestDto){
         Product oldProduct = getProductById(id);
         Category fromDbCategory = categoryDao.findCategoryByCategoryName(productSaveRequestDto.getCategoryName());
@@ -87,7 +79,6 @@ public class ProductEntityService {
     }
 
 
-
     public Product getProductById(Long id){
         return productDao.findProductById(id)
                 .orElseThrow(() -> new ProductNotFoundException("Product not found with that id: "+id));
@@ -100,4 +91,18 @@ public class ProductEntityService {
     }
 
 
+    public List<Product> findAll() {
+        List<Product> productList = productDao.findAll();
+        return productList;
+    }
+
+    public List<Product> getAllByCategoryId(Long categoryId){
+        List<Product> productList = productDao.findAllByCategoryId(categoryId);
+        return productList;
+    }
+
+    public List<Product> findAllByFinalPriceBetween( BigDecimal lowprice, BigDecimal highPrice){
+        List<Product> productList = productDao.findAllByFinalPriceBetween(lowprice, highPrice);
+        return productList;
+    }
 }
