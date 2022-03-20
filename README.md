@@ -44,7 +44,6 @@
 * [Contact me](#Contact-me)
 
 
-
 ## About The Graduation Project
 This is a graduation project for Softtech Spring Bootcamp. The Graduation Project was given at the end of the 5th week in this bootcamp. It is a project that'll ensures that the subjects we learned during this bootcamp are reinforced with the technologies used by the sponsor company Softtech. [<img src='https://softtech.com.tr/wp-content/uploads/2017/12/standart-logo.png' alt='softtech' height='20'>](https://softtech.com.tr/) .
 
@@ -54,6 +53,8 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 
 ### Project Prepration Documents
 [The Project Prepration Documents in Turkish](https://github.com/165-Softtech-Patika-Java-Spring/bitirmeprojesi-UyCoder/blob/main/BitirmeProjesiHazirlikDokumani.pdf)
+
+<p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
 ## Project Structure
 ![projectStrcuture](https://user-images.githubusercontent.com/50663127/159141313-288e892f-14ac-4b64-ab2e-5816c0006e0c.PNG)
@@ -92,6 +93,7 @@ Swagger-UI link
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [Git Windows GUI](https://git-scm.com/downloads)
 
+<p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
 ### Dependencies
 I used Maven as a dependency management framework. Here is how I configured the pom.xml file:
@@ -224,6 +226,8 @@ I used Maven as a dependency management framework. Here is how I configured the 
 ```
 </details>
 
+
+<p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
 ### File Structure
 <details>
@@ -496,12 +500,15 @@ Graduation Project
 ```
 
 </details>
+<p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
 ## Reference
 
 ### Articles
 
 ### Videos
+
+<p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
 ## Thank you all !!!
 ### To Patika
@@ -512,9 +519,14 @@ Special thanks to [<img src='https://softtech.com.tr/wp-content/uploads/2017/12/
 I would like to express my respect and appreciation to our teacher, <strong>*Sadık Bahadır Memiş*</strong>, who trained us with his valuable experience and help us to learn this wonderful technology Spring. 👏🏻
 ### To Attendees
 Thank you everyone for participating. It was a pleasure to be in the same bootcamp with you. <strong>I wish you success in your life!💪</strong> I hope there will be a chance to continue our career together in the same development team.☕️
+
+<p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
+
 ## Contact me
 I wish we will keep in touch with each other later. 
 <br/>
 You can find me there: </br>
 [<img src='https://www.pngall.com/wp-content/uploads/2016/07/Linkedin-Download-PNG.png' alt='linkedin' height='20'>](https://www.linkedin.com/in/ahmed-bughra/) [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='20'>](https://github.com/Uycoder)
 [<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYcIooQ9bkjqGM1p-kwFPb0h4zZEVDzzRS3uhdg1sySKkvvNTE_wm5WTQWK36k7LH744w&usqp=CAU' alt='hackerrank' height='20'>](https://www.hackerrank.com/ahmedbughra)  [<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stack_Overflow_icon.svg/768px-Stack_Overflow_icon.svg.png' alt='stackoverflow' height='20'>](https://stackoverflow.com/users/16111723/ahmad-ali)
+
+<p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
