@@ -26,7 +26,7 @@
     + [Project Requirements](#Project-Requirements)
 * [Project Prepration Documents](#Project-Prepration-Documents)
 * [Project Structure](#Project-Structure)
-    + [Diagram](#Diagram)
+    + [Database](#Databse,-Tables-and-columns)
     + [Demo](#demo)
     + [Swagger Documentation](#Swagger-Documentation)
     + [Technologies](#Technologies)
@@ -35,13 +35,13 @@
 * [Reference](#Reference)
     + [Articles](#Articles)
     + [Videos](#Videos)
-* [Acknowledgments](#Acknowledgments)
-    + [Patika](#Patika)
-    + [Softtech](#Softtech)
-    + [Teacher](#Teacher)
-    + [Attendees](#Attendees)
+* [Acknowledgments](#Thank-you-all-!!!)
+    + [Patika](#To-Patika)
+    + [Softtech](#To-Softtech)
+    + [Teacher](#To-Teacher)
+    + [Attendees](#To-Attendees)
 * [License](#license)
-* [Contact me](#linkedIn)
+* [Contact me](#Contact-me)
 
 
 
@@ -63,16 +63,35 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 ![DatabaseAndColumns](https://user-images.githubusercontent.com/50663127/159141315-c19151ea-1980-4701-bfd4-03bb8249ea58.PNG)
 
 ### Demo
+Project Demo link
+
 ### Swagger Documentation
+Swagger-UI link
+
 ### Technologies
-- Spring
-- PostgreSQL
-- Hibernate
-- Thymeleaf
-- HTML
-- Bootstrap 
-- Docker
-- AWS EC2
+- [Spring](https://spring.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Hibernate](https://hibernate.org/)
+- [Lombok](https://projectlombok.org/)
+- [Swagger-UI](https://swagger.io/tools/swagger-ui/)
+- [SpringSecurity](https://spring.io/projects/spring-security)
+- [JWT](https://jwt.io/)
+- [Thymeleaf](https://www.thymeleaf.org/)
+- [HTML](https://html.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Docker](https://www.docker.com/)
+- [AWS EC2](https://aws.amazon.com/ec2/)
+- [Heroku](https://www.heroku.com/)
+- [Git](https://git-scm.com/)
+- [Maven](https://maven.apache.org/)
+
+### Tools:
+- [Intellj IDEA](https://www.jetbrains.com/idea/)
+- [Postman](https://www.postman.com/)
+- [pgAdmin for PostgreSQL ](https://www.pgadmin.org/) 
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- [Git Windows GUI](https://git-scm.com/downloads)
+
 
 ### Dependencies
 I used Maven as a dependency management framework. Here is how I configured the pom.xml file:
