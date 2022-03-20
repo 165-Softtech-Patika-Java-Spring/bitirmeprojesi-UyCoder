@@ -24,7 +24,7 @@ public class UserController {
     private final UserEntityService userEntityService;
 
 
-    // Sisteme yeni kullanıcı tanımlanabilir
+    // Sisteme yeni kullanıcı tanımlanabilir == bitti
     @PostMapping
     @Operation(tags = "User Controller", description = "Create New User", summary = "Create New User")
     public ResponseEntity createUser(@RequestBody User user) {
@@ -32,7 +32,7 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-    // kullanıcı güncellenebilir
+    // kullanıcı güncellenebilir == Bitti
     @PutMapping("/{id}")
     @Operation(tags = "User Controller", description = "Update User", summary = "Update User")
     public ResponseEntity<Void> updateUserById(@PathVariable Long id, @RequestBody UserSaveRequestDto userSaveRequestDto){
@@ -40,7 +40,7 @@ public class UserController {
         return new ResponseEntity<>(OK);
     }
 
-    // kullanıcı silinebilir.
+    // kullanıcı silinebilir == Bitti
     @DeleteMapping("/{id}")
     @Operation(tags = "User Controller", description = "Delete User", summary = "Delete User")
     public ResponseEntity deleteUser(@PathVariable Long id){

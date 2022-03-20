@@ -47,6 +47,8 @@ public class ProductEntityService {
                 .multiply(BigDecimal.valueOf(fromDbCategory.get().getKdvRate()))
                 .divide(BigDecimal.valueOf(100))
                 .add(newProductDto.getPriceWithoutKdv()));
+         // Buralar biraz kafa complecated yazildi ama yapilan islem su:
+        //  (KDV'sizFiyat * KDV / 100) + KDV'sizFiyat
         return productDao.save(newProduct);
     }
 

@@ -6,4 +6,6 @@ package dev.ahmed.graduationproject.app.service;
  * @Project bitirmeprojesi-UyCoder
  */
 public class Service {
+
+
 }
