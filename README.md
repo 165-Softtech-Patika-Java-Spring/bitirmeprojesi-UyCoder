@@ -15,7 +15,7 @@
     ·
     <a href="https://github.com/165-Softtech-Patika-Java-Spring/bitirmeprojesi-UyCoder/blob/main/BitirmeProjesiHazirlikDokumani.pdf">Project Prapration Doc</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">View Demo</a>
+    <a href="http://54.90.118.123:8080/">View Demo</a>
   </p>
 </div>
 
@@ -68,10 +68,10 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 
 ### Demo
 Project Demo link:
-[Softtech Graduation Project](https://softech-graduation-app.herokuapp.com/)
+[Softtech Graduation Project](http://54.90.118.123:8080/)
 
 ### Swagger Documentation
-Swagger-UI link
+[Swagger-UI link](http://54.90.118.123:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/Product%20Controller/getAll)
 
 ### Technologies
 - [Spring](https://spring.io/)
