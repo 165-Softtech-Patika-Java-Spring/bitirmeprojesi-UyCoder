@@ -57,7 +57,7 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 <p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
 ## Project Structure
-![ProjectStructure](https://user-images.githubusercontent.com/50663127/159262960-a5de8c72-eaf3-42a3-9d6e-63cb5a2328b9.jpg)
+![ProjectStructure](https://user-images.githubusercontent.com/50663127/159264684-b72d75f6-5a1a-4e13-aa21-0e921fcf2d6f.jpg)
 
 
 
