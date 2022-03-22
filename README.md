@@ -69,7 +69,7 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 Project Demo link
 
 ### Swagger Documentation
-Swagger-UI link
+[Swagger-UI link](http://54.90.118.123:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config)
 
 ### Technologies
 - [Spring](https://spring.io/)
