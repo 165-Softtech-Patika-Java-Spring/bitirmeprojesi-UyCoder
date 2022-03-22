@@ -3,7 +3,9 @@ package dev.ahmed.graduationproject.app.controller.frontendcontroller;
 import dev.ahmed.graduationproject.app.dto.UserLoginDto;
 
 import dev.ahmed.graduationproject.app.entity.Product;
+import dev.ahmed.graduationproject.app.entity.User;
 import dev.ahmed.graduationproject.app.service.entityservice.ProductEntityService;
+import dev.ahmed.graduationproject.app.service.entityservice.UserEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +26,7 @@ import java.util.List;
 public class IndexController {
 
     private final ProductEntityService productEntityService;
+    private final UserEntityService userEntityService;
 
     @GetMapping(value = {"/", "/login"})
     public String logingPage() {
@@ -54,6 +57,7 @@ public class IndexController {
         }
     }
 
+
     @GetMapping(value = {"/main"})
     public String mainPage(Model model) {
         List<Product> productList= productEntityService.findAll();
@@ -61,10 +65,4 @@ public class IndexController {
         model.addAttribute("products", productList);
         return "main";
     }
-
-    @GetMapping(value = {"/signup"})
-    public String signupPage() {
-        return "signup";
-    }
-
 }

@@ -210,7 +210,7 @@
 
                         <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
                             <img src="/img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="softtechlogo"/>
-                            <span class="text-dark" >[[${session.loginUser.userName}]]</span>
+                            <span class="text-dark" >Welcome</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item" href=""><i class="align-middle me-1" data-feather="user"></i>
@@ -233,7 +233,7 @@
         <main class="content">
             <div class="container-fluid p-0">
 
-                <h1 class="h3 mb-3">Products</h1>
+                <h1 class="h3 mb-3">Users</h1>
 
                 <div class="row">
                     <div class="col-12">
@@ -248,96 +248,30 @@
                                         <div class="card flex-fill">
                                             <div class="card-header">
 
-                                                <h5 class="card-title mb-0">List of All Products</h5>
+                                                <h5 class="card-title mb-0">List of All Users</h5>
                                             </div>
                                             <table class="table table-hover my-0">
                                                 <thead>
                                                 <tr>
-                                                    <th>Product ID</th>
-                                                    <th class="d-none d-xl-table-cell">Product Name</th>
-                                                    <th class="d-none d-xl-table-cell">Category ID</th>
-                                                    <th class="d-none d-xl-table-cell">Price Without KDV</th>
-                                                    <th class="d-none d-xl-table-cell">KDV Rate (%)</th>
-                                                    <th class="d-none d-md-table-cell">Final Price</th>
-                                                    <th>Status</th>
+                                                    <th>User ID</th>
+                                                    <th class="d-none d-xl-table-cell">User ID</th>
+                                                    <th class="d-none d-xl-table-cell">First Name</th>
+                                                    <th class="d-none d-xl-table-cell">Last Name</th>
+                                                    <th>Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>Product ID</td>
-                                                    <td class="d-none d-xl-table-cell">Product Name</td>
-                                                    <td class="d-none d-xl-table-cell">Category ID</td>
-                                                    <td class="d-none d-xl-table-cell">Price Without KDV</td>
-                                                    <td class="d-none d-xl-table-cell">KDV Rate (%)</td>
-                                                    <td class="d-none d-md-table-cell">Final Price</td>
-                                                    <td><span class="badge bg-success">Done</span></td>
-                                                </tr>
-                                                <tr>
-
-                                                    <td>Product ID</td>
-                                                    <td class="d-none d-xl-table-cell">Product Name</td>
-                                                    <td class="d-none d-xl-table-cell">Category ID</td>
-                                                    <td class="d-none d-xl-table-cell">Price Without KDV</td>
-                                                    <td class="d-none d-xl-table-cell">KDV Rate (%)</td>
-                                                    <td class="d-none d-md-table-cell">Final Price</td>
-                                                    <td><span class="badge bg-danger">Cancelled</span></td>
-                                                </tr>
-                                                <tr>
-
-
-                                                    <td>Product ID</td>
-                                                    <td class="d-none d-xl-table-cell">Product Name</td>
-                                                    <td class="d-none d-xl-table-cell">Category ID</td>
-                                                    <td class="d-none d-xl-table-cell">Price Without KDV</td>
-                                                    <td class="d-none d-xl-table-cell">KDV Rate (%)</td>
-                                                    <td class="d-none d-md-table-cell">Final Price</td>
-                                                    <td><span class="badge bg-success">Done</span></td>
+                                                <tr th:each="user:${users}">
+                                                    <td th:text="${user.id}">User ID</td>
+                                                    <td th:text="${user.userName}" class="d-none d-xl-table-cell">User Name</td>
+                                                    <td th:text="${user.firstName}" class="d-none d-xl-table-cell">First Name</td>
+                                                    <td th:text="${user.lastName}" class="d-none d-xl-table-cell">Last Name</td>
+                                                    <td><span class="badge bg-success">Edit</span>
+                                                        <span class="badge bg-danger">Delete</span>
+                                                    </td>
 
                                                 </tr>
-                                                <tr>
 
-
-                                                    <td>Product ID</td>
-                                                    <td class="d-none d-xl-table-cell">Product Name</td>
-                                                    <td class="d-none d-xl-table-cell">Category ID</td>
-                                                    <td class="d-none d-xl-table-cell">Price Without KDV</td>
-                                                    <td class="d-none d-xl-table-cell">KDV Rate (%)</td>
-                                                    <td class="d-none d-md-table-cell">Final Price</td>
-                                                    <td><span class="badge bg-warning">In progress</span></td>
-                                                </tr>
-                                                <tr>
-
-
-                                                    <td>Product ID</td>
-                                                    <td class="d-none d-xl-table-cell">Product Name</td>
-                                                    <td class="d-none d-xl-table-cell">Category ID</td>
-                                                    <td class="d-none d-xl-table-cell">Price Without KDV</td>
-                                                    <td class="d-none d-xl-table-cell">KDV Rate (%)</td>
-                                                    <td class="d-none d-md-table-cell">Final Price</td>
-                                                    <td><span class="badge bg-success">Done</span></td>
-                                                </tr>
-                                                <tr>
-
-                                                    <td>Product ID</td>
-                                                    <td class="d-none d-xl-table-cell">Product Name</td>
-                                                    <td class="d-none d-xl-table-cell">Category ID</td>
-                                                    <td class="d-none d-xl-table-cell">Price Without KDV</td>
-                                                    <td class="d-none d-xl-table-cell">KDV Rate (%)</td>
-                                                    <td class="d-none d-md-table-cell">Final Price</td>
-                                                    <td><span class="badge bg-success">Done</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Product ID</td>
-                                                    <td class="d-none d-xl-table-cell">Product Name</td>
-                                                    <td class="d-none d-xl-table-cell">Category ID</td>
-                                                    <td class="d-none d-xl-table-cell">Price Without KDV</td>
-                                                    <td class="d-none d-xl-table-cell">KDV Rate (%)</td>
-                                                    <td class="d-none d-md-table-cell">Final Price</td>
-                                                    <td><span class="badge bg-success">Done</span></td>
-                                                </tr>
-                                                <tr>
-
-                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>

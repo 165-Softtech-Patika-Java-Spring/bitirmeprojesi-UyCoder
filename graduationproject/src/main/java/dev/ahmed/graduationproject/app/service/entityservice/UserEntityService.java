@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.webjars.NotFoundException;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -62,4 +63,8 @@ public class UserEntityService {
     }
 
 
+    public List<User> findAll() {
+        List<User> userList = userDao.findAll();
+        return userList;
+    }
 }

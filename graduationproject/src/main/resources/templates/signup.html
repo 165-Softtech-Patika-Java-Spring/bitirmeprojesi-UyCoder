@@ -41,28 +41,29 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="m-sm-4">
-                                <form action="main" method="post" th:action="@{/templates/main.html}">
+                                <form action="signup.html" method="post"  th:action="@{/signup}" th:object="${user}" >
 
                                     <div class=" mb-3 ">
+                                        <br/>
                                         <label class="form-label">User Name</label>
-                                        <input class="form-control form-control-lg" type="text" name="userName"
-                                               placeholder="Enter your user name"/>
+                                        <input th:field="*{userName}"  type="text" class="form-control form-control-lg" name="userName"
+                                               placeholder="Enter your user name" required />
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div class="mb-3 ">
                                         <label class="form-label">First Name</label>
-                                        <input class="form-control form-control-lg" type="text" name="firstName"
-                                               placeholder="Enter your frist name"/>
+                                        <input th:field="*{firstName}" class="form-control form-control-lg" type="text" name="firstName"
+                                               placeholder="Enter your frist name"  />
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Last Name</label>
-                                        <input class="form-control form-control-lg" type="text" name="lastName"
+                                        <input th:field="*{lastName}" class="form-control form-control-lg" type="text" name="lastName"
                                                placeholder="Enter your last name"/>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Password</label>
-                                        <input class="form-control form-control-lg" type="text" name="password"
-                                               placeholder="Enter password"/>
+                                        <input th:field="*{password}"  class="form-control form-control-lg" type="text" name="password"
+                                               placeholder="Enter password" required />
                                     </div>
                                     <div class="text-center mt-3">
                                          <button type="submit" class="btn btn-lg btn-primary">Sign up</button>
