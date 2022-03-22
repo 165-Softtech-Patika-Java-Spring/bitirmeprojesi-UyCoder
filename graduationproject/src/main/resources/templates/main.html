@@ -259,7 +259,7 @@
                                                     <th class="d-none d-xl-table-cell">Price Without KDV</th>
                                                     <th class="d-none d-xl-table-cell">KDV Rate (%)</th>
                                                     <th class="d-none d-md-table-cell">Final Price</th>
-                                                    <th>Status</th>
+                                                    <th>Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -270,7 +270,10 @@
                                                     <td class="d-none d-xl-table-cell" th:text="${product.priceWithoutKdv}">Price Without KDV</td>
                                                     <td class="d-none d-xl-table-cell" th:text="${product.kdvRate}">KDV Rate (%)</td>
                                                     <td class="d-none d-md-table-cell" th:text="${product.finalPrice}">Final Price</td>
-                                                    <td><span class="badge bg-success">Added</span></td>
+                                                    <td><button class="btn btn-primary">Edit</button>
+                                                        <button class="btn btn-info">Price</button>
+                                                        <button class="btn btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
