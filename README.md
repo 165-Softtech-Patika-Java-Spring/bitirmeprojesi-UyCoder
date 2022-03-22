@@ -57,8 +57,7 @@ This is a graduation project for Softtech Spring Bootcamp. The Graduation Projec
 <p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
 ## Project Structure
-![ProjectStructure](https://user-images.githubusercontent.com/50663127/159177623-740fa903-ac71-4656-9769-fd2e229a4380.jpg)
-
+![](graduationproject/src/main/resources/static/img/ProjectStructure.jpg)
 
 ### Databse, Tables and columns
 I used PostgreSQL for the Databse of this project and here is the tables and columns:
@@ -66,10 +65,10 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 
 
 ### Demo
-Project Demo link
+[Project Demo link](http://54.90.118.123:8080/)
 
 ### Swagger Documentation
-Swagger-UI link
+[Swagger-UI link](http://54.90.118.123:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
 
 ### Technologies
 - [Spring](https://spring.io/)

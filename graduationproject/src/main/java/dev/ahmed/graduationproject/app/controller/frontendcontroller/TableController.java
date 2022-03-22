@@ -1,12 +1,17 @@
 package dev.ahmed.graduationproject.app.controller.frontendcontroller;
 
 import dev.ahmed.graduationproject.app.dto.CategoryFindAllDetailsDto;
+import dev.ahmed.graduationproject.app.entity.Category;
 import dev.ahmed.graduationproject.app.entity.Product;
 import dev.ahmed.graduationproject.app.service.entityservice.CategoryEntityService;
+import dev.ahmed.graduationproject.gen.dto.RestResponse;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,18 +62,18 @@ public class TableController {
         return "deleteproduct";
     }
 
+
+    // send category information to the details.html page
     @GetMapping("/details")
-    public String details(Long id, Model model) {
-
-        List<CategoryFindAllDetailsDto> categoryDitails = new ArrayList<>();
-
-        for (id = Long.valueOf(1); id<7; id++){
-            categoryDitails.add(categoryEntityService.findAllDetails(id));
+    public String details(Model model) {
+        List<CategoryFindAllDetailsDto> categorydetails = new ArrayList<>();
+        for (long id=1; id<categoryEntityService.getCategoryCount(); id++){
+            categorydetails.add(categoryEntityService.findAllDetails(id));
         }
-
-        model.addAttribute("categorydetails", categoryDitails);
+        model.addAttribute("categorydetails", categorydetails);
         return "details";
     }
+
 
     @GetMapping("/productsfromcategory")
     public String productsfromcategory() {

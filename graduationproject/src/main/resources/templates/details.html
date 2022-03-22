@@ -239,7 +239,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title mb-0">===============</h5>
+                                <h5 class="card-title mb-0"></h5>
                             </div>
                             <div class="card-body">
 
@@ -248,13 +248,12 @@
                                         <div class="card flex-fill">
                                             <div class="card-header">
 
-                                                <h5 class="card-title mb-0">List of All Products</h5>
+                                                <h5 class="card-title mb-0">List of All Information about all categories</h5>
                                             </div>
                                             <table class="table table-hover my-0">
                                                 <thead>
                                                 <tr>
-                                                    <th>Product ID</th>
-                                                    <th class="d-none d-xl-table-cell">Product Name</th>
+                                                    <th class="d-none d-xl-table-cell">Category Name</th>
                                                     <th class="d-none d-xl-table-cell">KDV Rate (%)</th>
                                                     <th class="d-none d-xl-table-cell">Min Price</th>
                                                     <th class="d-none d-xl-table-cell">Max Price</th>
@@ -263,13 +262,13 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-<!--                                                <tr th:each="categorydetails:${categorydetails}">-->
-<!--                                                    <td th:text="${categorydetails.of(1)}">Product ID</td>-->
-<!--                                                    <td class="d-none d-xl-table-cell" th:text="${categorydetails.kdvRate}">Product Name</td>-->
-<!--                                                    <td class="d-none d-xl-table-cell" th:text="${categorydetails.minPrice}">Category ID</td>-->
-<!--                                                    <td class="d-none d-xl-table-cell" th:text="${categorydetails.maxPrice}">Price Without KDV</td>-->
-<!--                                                    <td class="d-none d-xl-table-cell" th:text="${categorydetails.averagePrice}">KDV Rate (%)</td>-->
-<!--                                                    <td class="d-none d-md-table-cell" th:text="${categorydetails.productCount}">Final Price</td>-->
+                                                <tr th:each="categorydetail:${categorydetails}">
+                                                    <td th:text="${categorydetail.categoryName}">Category Name</td>
+                                                    <td class="d-none d-xl-table-cell" th:text="${categorydetail.kdvRate}">KDV Rate (%)</td>
+                                                    <td class="d-none d-xl-table-cell" th:text="${categorydetail.minPrice}">Min Price</td>
+                                                    <td class="d-none d-xl-table-cell" th:text="${categorydetail.maxPrice}">Max Price</td>
+                                                    <td class="d-none d-xl-table-cell" th:text="${categorydetail.averagePrice}">Average  Price</td>
+                                                    <td class="d-none d-md-table-cell" th:text="${categorydetail.productCount}">Product Count</td>
 
                                                 </tr>
                                                 </tbody>

@@ -76,4 +76,8 @@ public class CategoryEntityService {
 
     }
 
+    public Integer getCategoryCount() {
+        return categoryDao.findAll().size();
+    }
+
 }
