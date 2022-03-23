@@ -65,4 +65,9 @@ public class IndexController {
         model.addAttribute("products", productList);
         return "main";
     }
+
+    @GetMapping("/main-1")
+    public String main2Page() {
+        return "main-1";
+    }
 }
