@@ -5,6 +5,7 @@ import dev.ahmed.graduationproject.app.dao.ProductDao;
 import dev.ahmed.graduationproject.app.dto.CategoryFindAllDetailsDto;
 import dev.ahmed.graduationproject.app.dto.CategoryUpdateKdvDto;
 import dev.ahmed.graduationproject.app.entity.Category;
+import dev.ahmed.graduationproject.app.entity.Product;
 import dev.ahmed.graduationproject.app.exception.CategoryAlreadyExistsException;
 import dev.ahmed.graduationproject.app.exception.CategoryNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -78,6 +79,11 @@ public class CategoryEntityService {
 
     public Integer getCategoryCount() {
         return categoryDao.findAll().size();
+    }
+
+    public List<Category> findAll() {
+        List<Category> categoryList = categoryDao.findAll();
+        return categoryList;
     }
 
 }

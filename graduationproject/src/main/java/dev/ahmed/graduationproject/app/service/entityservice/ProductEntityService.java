@@ -7,8 +7,10 @@ import dev.ahmed.graduationproject.app.dto.ProductSaveRequestDto;
 import dev.ahmed.graduationproject.app.dto.ProductUpdatePriceDto;
 import dev.ahmed.graduationproject.app.entity.Category;
 import dev.ahmed.graduationproject.app.entity.Product;
+import dev.ahmed.graduationproject.app.entity.User;
 import dev.ahmed.graduationproject.app.exception.ProductAlreadyExistsException;
 import dev.ahmed.graduationproject.app.exception.ProductNotFoundException;
+import dev.ahmed.graduationproject.app.exception.UserAlreadyExistsException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -106,5 +108,13 @@ public class ProductEntityService {
     public List<Product> findAllByFinalPriceBetween( BigDecimal lowprice, BigDecimal highPrice){
         List<Product> productList = productDao.findAllByFinalPriceBetween(lowprice, highPrice);
         return productList;
+    }
+
+    public Product createProduct(Product newProduct){
+        Optional<Product> productByName = productDao.findAllByProductName(newProduct.getProductName());
+        if (productByName.isPresent()){
+            throw new UserAlreadyExistsException("Product already exists with the name: " + newProduct.getProductName());
+        }
+        return productDao.save(newProduct);
     }
 }

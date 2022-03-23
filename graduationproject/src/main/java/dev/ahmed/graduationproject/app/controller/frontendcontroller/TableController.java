@@ -5,21 +5,16 @@ import dev.ahmed.graduationproject.app.entity.Category;
 import dev.ahmed.graduationproject.app.entity.Product;
 import dev.ahmed.graduationproject.app.entity.User;
 import dev.ahmed.graduationproject.app.service.entityservice.CategoryEntityService;
+import dev.ahmed.graduationproject.app.service.entityservice.ProductEntityService;
 import dev.ahmed.graduationproject.app.service.entityservice.UserEntityService;
-import dev.ahmed.graduationproject.gen.dto.RestResponse;
-import dev.ahmed.graduationproject.gen.exceptions.ItemNotFoundException;
-import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.thymeleaf.exceptions.TemplateInputException;
 
 import java.util.ArrayList;
-import java.util.EmptyStackException;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @Author Ahmed Bughra
@@ -32,20 +27,43 @@ public class TableController {
 
     private final CategoryEntityService categoryEntityService;
     private final UserEntityService userEntityService;
+    private final ProductEntityService productEntityService;
 
+    // This get and post mapping will handle signup page to create new user
     @GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("user", new User());
-        return "signup";
-    }
-
+        return "signup";}
     @PostMapping("/signup")
     public String createUser(@ModelAttribute User user) {
         user = userEntityService.createUser(user);
         ResponseEntity.ok(user);
-        return "redirect:/main.html";
-    }
+        return "redirect:/main.html";}
 
+    // This get and post mapping will handle addProduct page to create new product
+    @GetMapping("/addproduct")
+    public String addproductPage(Model model) {
+        List<Category> categoryList = categoryEntityService.findAll();
+        model.addAttribute("categories", categoryList);
+        model.addAttribute("product", new Product());
+        return "addproduct"; }
+    @PostMapping("/addproduct")
+    public String addproduct(@ModelAttribute Product product) {
+        product = productEntityService.createProduct(product);
+        System.out.println(product);
+        ResponseEntity.ok(product);
+        return "redirect:/main";}
+
+    // This get and post mapping will handle addCategory page to create new category
+    @GetMapping("/addcategory")
+    public String addcategory(Model model) {
+        model.addAttribute("category", new Category());
+        return "addcategory";}
+    @PostMapping("/addcategory")
+    public String createCategory(@ModelAttribute Category category) {
+        category = categoryEntityService.createCategory(category);
+        ResponseEntity.ok(category);
+        return "redirect:/main";}
 
     @GetMapping("/updateuser")
     public String updateuser(Model model) {
@@ -54,15 +72,31 @@ public class TableController {
         return "updateuser";
     }
 
-    @GetMapping("/deleteuser")
-    public String deleteuser() {
-        return "deleteuser";
+
+
+
+    // Go to update page and fill the current user info
+    @GetMapping("/edituser/{id}")
+    public String toEditPage(@PathVariable("id") Long id, Model model) {
+        User userById = userEntityService.getUserById(id);
+        model.addAttribute("user", userById);
+        return "edituser";
+    }
+    @PostMapping(value = "/edituser" )
+    public String editUserPage(@ModelAttribute User user) {
+        user = userEntityService.saveUser(user.getId());
+        ResponseEntity.ok(user);
+        return "redirect:/updateuser";
     }
 
-    @GetMapping("/addproduct")
-    public String addproduct() {
-        return "addproduct";
+
+    @PostMapping(value = "/edituser/{id}")
+    public String deleteuser(@PathVariable("id") Long id) {
+        userEntityService.deleteUser(id);
+        return "redirect:/updateuser";
     }
+
+
 
     @GetMapping("/updateproduct")
     public String updateproduct() {
@@ -106,20 +140,17 @@ public class TableController {
         return "productsfromcategory";
     }
 
-    @GetMapping("/addcategory")
-    public String addcategory() {
-        return "addcategory";
-    }
+
 
     @GetMapping("/updatekdv")
     public String updatekdv() {
         return "updatekdv";
     }
 
-    @GetMapping("/deletecategory")
-    public String deletecategory() {
-        return "deletecategory";
+    @GetMapping("/categories")
+    public String categoriesfindAll(Model model) {
+        List<Category> categoryList = categoryEntityService.findAll();
+        model.addAttribute("categories", categoryList);
+        return "categories";
     }
-
-
 }

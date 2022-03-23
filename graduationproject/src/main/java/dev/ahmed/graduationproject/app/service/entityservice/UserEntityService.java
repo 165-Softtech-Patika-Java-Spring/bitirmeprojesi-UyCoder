@@ -1,20 +1,13 @@
 package dev.ahmed.graduationproject.app.service.entityservice;
 
-import dev.ahmed.graduationproject.app.converter.UserMapperImpl;
-import dev.ahmed.graduationproject.app.dto.UserDto;
-import dev.ahmed.graduationproject.app.converter.UserMapper;
 import dev.ahmed.graduationproject.app.dao.UserDao;
-import dev.ahmed.graduationproject.app.dto.UserResponseDto;
 import dev.ahmed.graduationproject.app.dto.UserSaveRequestDto;
-import dev.ahmed.graduationproject.app.dto.UserUpdateRequestDto;
 import dev.ahmed.graduationproject.app.entity.User;
 import dev.ahmed.graduationproject.app.exception.UserAlreadyExistsException;
 import dev.ahmed.graduationproject.app.exception.UserNotFoundException;
-import dev.ahmed.graduationproject.gen.exceptions.ItemNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.webjars.NotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -66,5 +59,11 @@ public class UserEntityService {
     public List<User> findAll() {
         List<User> userList = userDao.findAll();
         return userList;
+    }
+
+
+    public User saveUser(Long id) {
+        User user = userDao.getById(id);
+        return userDao.save(user);
     }
 }

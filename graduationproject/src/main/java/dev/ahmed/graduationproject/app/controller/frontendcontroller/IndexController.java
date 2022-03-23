@@ -38,7 +38,7 @@ public class IndexController {
     public String main(UserLoginDto userLoginDto, HttpSession session, Model model) {
         if (userLoginDto.getUserName().equals("ahmed") && userLoginDto.getPassword().equals("123")) {
         session.setAttribute("loginUser", userLoginDto);
-            return "redirect:main.html";
+            return "redirect:main";
         } else {
             model.addAttribute("msg", "Wrong password!");
             return "login";
@@ -66,8 +66,8 @@ public class IndexController {
         return "main";
     }
 
-    @GetMapping("/main-1")
-    public String main2Page() {
-        return "main-1";
-    }
+//    @GetMapping("/main-1")
+//    public String main2Page() {
+//        return "main-1";
+//    }
 }

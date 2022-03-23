@@ -23,7 +23,7 @@
 
 <body>
 <div class="wrapper">
-    <nav th:insert="~{main::copysidebar}" ></nav>
+    <nav th:insert="~{main::copysidebar}"></nav>
     <!-- ==================================================================================================== -->
     <div class="main">
         <nav th:insert="~{main::copynavbar}" ></nav>
@@ -39,33 +39,43 @@
                             <div class="card-header">
                                 <h5 class="card-title mb-0">===============</h5>
                             </div>
-                            <form class="card" th:action="@{/addproduct}" method="post" >
+                            <form class="card" th:action="@{/edituser}" method="post" >
 
-                                 <div class="card-header">
-                                     <h5 class="card-title mb-0">Please Insert Product Information</h5>
+                                <input type="hidden" name="_method" value="put" th:if="${user!=null}" />
+
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Please Insert User Information</h5>
                                 </div>
-                                  <div class="card-body">
-                                    <input
-                                           name="productName"
-                                           type="text"
-                                           class="form-control"
-                                           placeholder="Product Name">
+                                <div hidden class="card-body">
+                                    <input name="id" type="text" class="form-control"
+                                           placeholder="id" th:value="${user.id}" >
                                 </div>
                                 <div class="card-body">
-                                <select  name="categoryId" class="form-select mb-3">
-                                    <option
-                                            th:value="*{category.id}"
-                                            th:each="category:${categories}"
-                                            th:text="${category.categoryName}">
-                                    </option>
-                                </select>
+                                    <a>User name</a>
+                                     <input name="userName" type="text" class="form-control"
+                                           placeholder="User name" th:value="${user.userName}" >
                                 </div>
 
                                 <div class="card-body">
-                                    <input name="priceWithoutKdv" type="number" class="form-control" placeholder="Price Without KDV">
+                                    <a>Password</a>
+                                    <input name="password" type="text" class="form-control"
+                                           placeholder="Password" th:value="${user.password}">
                                 </div>
+
                                 <div class="card-body">
-                                <button type="submit" class="btn btn-primary">Create Product</button>
+                                    <a>First name</a>
+                                    <input name="firstName" type="text" class="form-control"
+                                           placeholder="First name" th:value="${user.firstName}" >
+                                </div>
+
+                                <div class="card-body">
+                                    <a>Last name</a>
+                                    <input name="lastName" type="text" class="form-control"
+                                           placeholder="Last name" th:value="${user.lastName}" >
+                                </div>
+
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-primary">Update User Information</button>
                                 </div>
 
                             </form>
@@ -75,7 +85,7 @@
             </div>
         </main>
         <!-- ==================================================================================================== -->
-        <footer th:insert="~{main::copyfooter}" > </footer>
+        <footer th:insert="~{main::copyfooter}"></footer>
     </div>
 </div>
 

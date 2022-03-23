@@ -31,52 +31,29 @@
         <main class="content">
             <div class="container-fluid p-0">
 
-                <h1 class="h3 mb-3">Products</h1>
+                <h1 class="h3 mb-3">Add New Category</h1>
 
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 col-lg-6">
                         <div class="card">
                             <div class="card-header">
                                 <h5 class="card-title mb-0">===============</h5>
                             </div>
-                            <div class="card-body">
-
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card flex-fill">
-                                            <div class="card-header">
-
-                                                <h5 class="card-title mb-0">List of All Products</h5>
-                                            </div>
-                                            <table class="table table-hover my-0">
-                                                <thead>
-                                                <tr>
-                                                    <th>Product ID</th>
-                                                    <th class="d-none d-xl-table-cell">Product Name</th>
-                                                    <th class="d-none d-xl-table-cell">Category ID</th>
-                                                    <th class="d-none d-xl-table-cell">Price Without KDV</th>
-                                                    <th class="d-none d-xl-table-cell">KDV Rate (%)</th>
-                                                    <th class="d-none d-md-table-cell">Final Price</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>Product ID</td>
-                                                    <td class="d-none d-xl-table-cell">Product Name</td>
-                                                    <td class="d-none d-xl-table-cell">Category ID</td>
-                                                    <td class="d-none d-xl-table-cell">Price Without KDV</td>
-                                                    <td class="d-none d-xl-table-cell">KDV Rate (%)</td>
-                                                    <td class="d-none d-md-table-cell">Final Price</td>
-                                                    <td><span class="badge bg-success">Done</span></td>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                    </div>
+                            <div class="card">
+                                <form class="card" th:action="@{/addcategory}" method="post" >
+                                 <div class="card-header">
+                                     <h5 class="card-title mb-0">Please Insert Category Information</h5>
                                 </div>
+                                  <div class="card-body">
+                                    <input name="categoryName" type="text" class="form-control" placeholder="Category Name">
+                                </div>
+                                <div class="card-body">
+                                    <input name="kdvRate" type="number" class="form-control" placeholder="KDV Rate (%)">
+                                </div>
+                                <div class="card-body">
+                                <button class="btn btn-primary">Create Category</button>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
