@@ -55,7 +55,8 @@
                                                     <th class="d-none d-xl-table-cell">User Name</th>
                                                     <th class="d-none d-xl-table-cell">First Name</th>
                                                     <th class="d-none d-xl-table-cell">Last Name</th>
-                                                    <th>Action</th>
+                                                    <th>Update</th>
+                                                    <th>Remove</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -67,7 +68,8 @@
                                                     <td>
                                                         <a class="btn btn-primary" th:href="@{/edituser/}+${user.id}">Edit</a>
                                                         <input name="_method" type="hidden" value="PUT" />
-
+                                                    </td>
+                                                    <td>
                                                         <form th:action="@{/edituser/}+${user.id}" method="post" >
                                                             <input type="hidden" name="_method" value="delete"/>
                                                             <button type="submit" class="btn btn-danger">Delete</button>

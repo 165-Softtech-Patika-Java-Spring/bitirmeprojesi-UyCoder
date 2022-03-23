@@ -48,7 +48,7 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="updateuser">
-                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Update User</span>
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">All Users</span>
                     </a>
                 </li>
 
@@ -144,7 +144,7 @@
                 <div class="sidebar-cta-content">
                     <strong class="d-inline-block mb-2">Swagger UI</strong>
                     <div class="mb-3 text-sm">
-                        If you want to go to the Swagger UI page, click the link below:
+                        Some features may not work very well, It'll work exactly on the Swagger UI page, Try it our there:
                     </div>
                     <div class="d-grid">
                         <a href="http://54.90.118.123:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/Product%20Controller/getAll"
@@ -253,7 +253,8 @@
                                                     <th class="d-none d-xl-table-cell">Price Without KDV</th>
                                                     <th class="d-none d-xl-table-cell">KDV Rate (%)</th>
                                                     <th class="d-none d-md-table-cell">Final Price</th>
-                                                    <th>Action</th>
+                                                    <th>Edit</th>
+                                                    <th>Remove</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -264,10 +265,11 @@
                                                     <td class="d-none d-xl-table-cell" th:text="${product.priceWithoutKdv}">Price Without KDV</td>
                                                     <td class="d-none d-xl-table-cell" th:text="${product.kdvRate}">KDV Rate (%)</td>
                                                     <td class="d-none d-md-table-cell" th:text="${product.finalPrice}">Final Price</td>
-                                                    <td><button class="btn btn-primary">Edit</button>
-                                                        <button class="btn btn-info">Price</button>
-                                                        <button class="btn btn-danger">Delete</button>
-                                                    </td>
+                                                    <td><button class="btn btn-primary">Edit</button></td>
+                                                    <td><form th:action="@{/main/}+${product.id}" method="post" >
+                                                        <input type="hidden" name="_method" value="delete"/>
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form></td>
                                                 </tr>
                                                 </tbody>
                                             </table>

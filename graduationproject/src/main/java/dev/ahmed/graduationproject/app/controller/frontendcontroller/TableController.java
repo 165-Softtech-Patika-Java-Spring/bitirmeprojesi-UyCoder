@@ -89,11 +89,18 @@ public class TableController {
         return "redirect:/updateuser";
     }
 
-
+    // Remove user
     @PostMapping(value = "/edituser/{id}")
     public String deleteuser(@PathVariable("id") Long id) {
         userEntityService.deleteUser(id);
         return "redirect:/updateuser";
+    }
+
+    // Remove Product
+    @PostMapping("/main/{id}")
+    public String deleteproduct(@PathVariable("id") Long id) {
+        productEntityService.deleteProduct(id);
+        return "redirect:/main";
     }
 
 
@@ -111,11 +118,6 @@ public class TableController {
     @GetMapping("/findbyprice")
     public String findbyprice() {
         return "findbyprice";
-    }
-
-    @GetMapping("/deleteproduct")
-    public String deleteproduct() {
-        return "deleteproduct";
     }
 
 
