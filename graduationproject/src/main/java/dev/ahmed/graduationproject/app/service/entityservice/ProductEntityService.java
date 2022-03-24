@@ -111,10 +111,23 @@ public class ProductEntityService {
     }
 
     public Product createProduct(Product newProduct){
+        // Check if product name present in DB or not
         Optional<Product> productByName = productDao.findAllByProductName(newProduct.getProductName());
         if (productByName.isPresent()){
             throw new UserAlreadyExistsException("Product already exists with the name: " + newProduct.getProductName());
         }
+
+        // Insert values and save the product
+            // KDV rate and final price not inserted from front end, So we should add it to newProcduct
+        Double kdvRateFromProductCategory = categoryDao.findCategoryById(newProduct.getCategoryId()).get().getKdvRate();
+
+        newProduct.setKdvRate(kdvRateFromProductCategory);
+        newProduct.setFinalPrice(newProduct.getPriceWithoutKdv()
+                .multiply(BigDecimal.valueOf(kdvRateFromProductCategory))
+                .divide(BigDecimal.valueOf(100))
+                .add(newProduct.getPriceWithoutKdv()));
+
         return productDao.save(newProduct);
     }
+
 }

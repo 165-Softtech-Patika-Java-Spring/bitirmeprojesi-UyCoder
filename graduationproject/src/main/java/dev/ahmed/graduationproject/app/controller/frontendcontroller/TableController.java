@@ -50,7 +50,6 @@ public class TableController {
     @PostMapping("/addproduct")
     public String addproduct(@ModelAttribute Product product) {
         product = productEntityService.createProduct(product);
-        System.out.println(product);
         ResponseEntity.ok(product);
         return "redirect:/main";}
 
