@@ -67,7 +67,7 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 ### Demo
 [Project Demo link](http://54.90.118.123:8080/)
 
-### Screenshots of the user interface:
+## Screenshots of the user interface:
 <details>
 <summary><strong>Show more</strong></summary>
   
@@ -94,7 +94,7 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 ### Swagger Documentation
 [Swagger-UI link](http://54.90.118.123:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
 
-### Screenshots for swagger file 
+## Screenshots for swagger file 
 <details>
  <summary><strong>Show more</strong></summary>
   
@@ -458,8 +458,20 @@ Graduation Project
 ## Reference
 
 ### Articles
+- https://www.baeldung.com/thymeleaf-in-spring-mvc
+- https://www.baeldung.com/spring-boot-crud-thymeleaf
+- https://www.baeldung.com/spring-cloud-heroku
+- https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku
+
 
 ### Videos
+- https://www.youtube.com/watch?v=_M7DAUhHW1A&list=PLLCTYkJ1vsDBYoOxOjNY7f6yiQLL7rbab
+- https://www.youtube.com/playlist?list=PLmOn9nNkQxJFKh2PMfWbGT7RVuMowsx-u
+- https://www.youtube.com/watch?v=9SGDpanrc8U
+- https://www.youtube.com/watch?v=5Bj1ZEvsTWI
+- https://www.youtube.com/watch?v=g5oI0sIUmB0
+- 
+
 
 <p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
