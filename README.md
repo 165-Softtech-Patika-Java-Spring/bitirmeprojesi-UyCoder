@@ -15,7 +15,7 @@
     ·
     <a href="https://github.com/165-Softtech-Patika-Java-Spring/bitirmeprojesi-UyCoder/blob/main/BitirmeProjesiHazirlikDokumani.pdf">Project Prapration Doc</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">View Demo</a>
+    <a href="http://54.90.118.123:8080/">View Demo</a>
   </p>
 </div>
 
