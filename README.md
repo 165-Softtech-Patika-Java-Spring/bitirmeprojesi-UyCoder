@@ -69,7 +69,7 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 
 ### Screenshots of the user interface:
 <details>
-
+<summary><strong>Show more</strong></summary>
   ![01](https://user-images.githubusercontent.com/50663127/160109151-a35f15c2-7669-4542-ae33-47ac4e45164a.PNG)
 
   ![02](https://user-images.githubusercontent.com/50663127/160109171-202eda6d-4102-4a77-9f27-b330af5a24f4.PNG)
@@ -83,7 +83,6 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
   ![06](https://user-images.githubusercontent.com/50663127/160109251-91483742-f4ae-4f10-bd01-49fc1005b3e8.PNG)
 
   ![07](https://user-images.githubusercontent.com/50663127/160109254-7c21581b-2aad-4089-92cd-c2b4408ab664.PNG)
-  
 
 
 </details>
@@ -96,7 +95,7 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 
 ### Screenshots for swagger file 
 <details>
- 
+ <summary><strong>Show more</strong></summary>
 ![08](https://user-images.githubusercontent.com/50663127/160109272-9a1d3c56-af65-4edb-8cc2-1790a10f013f.PNG)
   
 ![09](https://user-images.githubusercontent.com/50663127/160109285-21e46d64-600f-4d35-a647-232384412a5e.PNG)
