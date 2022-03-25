@@ -67,7 +67,7 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 ### Demo
 [Project Demo link](http://54.90.118.123:8080/)
 
-## Screenshots of the user interface:
+### Screenshots of the user interface:
 <details>
 <summary><strong>Show more</strong></summary>
   
@@ -94,7 +94,7 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 ### Swagger Documentation
 [Swagger-UI link](http://54.90.118.123:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
 
-## Screenshots for swagger file 
+### Screenshots for swagger file 
 <details>
  <summary><strong>Show more</strong></summary>
   
