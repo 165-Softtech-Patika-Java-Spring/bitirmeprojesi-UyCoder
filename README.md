@@ -465,13 +465,13 @@ Graduation Project
 
 
 ### Videos
-- https://www.youtube.com/watch?v=_M7DAUhHW1A&list=PLLCTYkJ1vsDBYoOxOjNY7f6yiQLL7rbab
+- https://www.youtube.com/playlist?list=PLLCTYkJ1vsDBYoOxOjNY7f6yiQLL7rbab
 - https://www.youtube.com/playlist?list=PLmOn9nNkQxJFKh2PMfWbGT7RVuMowsx-u
 - https://www.youtube.com/watch?v=9SGDpanrc8U
 - https://www.youtube.com/watch?v=5Bj1ZEvsTWI
 - https://www.youtube.com/watch?v=g5oI0sIUmB0
-- 
 
+ https://www.youtube.com/playlist?list=PLmOn9nNkQxJFKh2PMfWbGT7RVuMowsx-u
 
 <p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
