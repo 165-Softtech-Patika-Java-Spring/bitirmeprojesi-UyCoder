@@ -15,7 +15,7 @@
     ·
     <a href="https://github.com/165-Softtech-Patika-Java-Spring/bitirmeprojesi-UyCoder/blob/main/BitirmeProjesiHazirlikDokumani.pdf">Project Prapration Doc</a>
     ·
-    <a href="http://54.90.118.123:8080/">View Demo</a>
+    <a href="http://3.84.212.13:8080/">View Demo</a>
   </p>
 </div>
 
@@ -65,7 +65,7 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 
 
 ### Demo
-[Project Demo link](http://54.90.118.123:8080/)
+[Project Demo link](http://3.84.212.13:8080/)
 
 ### Screenshots of the user interface:
   ![01](https://user-images.githubusercontent.com/50663127/160109151-a35f15c2-7669-4542-ae33-47ac4e45164a.PNG)
@@ -93,7 +93,7 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 
 
 ### Swagger Documentation
-[Swagger-UI link](http://54.90.118.123:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
+[Swagger-UI link](http://3.84.212.13:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
 
 ### Screenshots for swagger file 
 
