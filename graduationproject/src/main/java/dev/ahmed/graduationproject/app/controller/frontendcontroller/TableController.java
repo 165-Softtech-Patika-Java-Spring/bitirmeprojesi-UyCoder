@@ -38,32 +38,10 @@ public class TableController {
     public String createUser(@ModelAttribute User user) {
         user = userEntityService.createUser(user);
         ResponseEntity.ok(user);
-        return "redirect:/main.html";}
+        return "redirect:/updateuser";}
 
-    // This get and post mapping will handle addProduct page to create new product
-    @GetMapping("/addproduct")
-    public String addproductPage(Model model) {
-        List<Category> categoryList = categoryEntityService.findAll();
-        model.addAttribute("categories", categoryList);
-        model.addAttribute("product", new Product());
-        return "addproduct"; }
-    @PostMapping("/addproduct")
-    public String addproduct(@ModelAttribute Product product) {
-        product = productEntityService.createProduct(product);
-        ResponseEntity.ok(product);
-        return "redirect:/main";}
 
-    // This get and post mapping will handle addCategory page to create new category
-    @GetMapping("/addcategory")
-    public String addcategory(Model model) {
-        model.addAttribute("category", new Category());
-        return "addcategory";}
-    @PostMapping("/addcategory")
-    public String createCategory(@ModelAttribute Category category) {
-        category = categoryEntityService.createCategory(category);
-        ResponseEntity.ok(category);
-        return "redirect:/main";}
-
+    // update user info page
     @GetMapping("/updateuser")
     public String updateuser(Model model) {
         List<User> users = userEntityService.findAll();
@@ -71,22 +49,48 @@ public class TableController {
         return "updateuser";
     }
 
-
-
-
     // Go to update page and fill the current user info
     @GetMapping("/edituser/{id}")
     public String toEditPage(@PathVariable("id") Long id, Model model) {
         User userById = userEntityService.getUserById(id);
         model.addAttribute("user", userById);
-        return "edituser";
-    }
-    @PostMapping(value = "/edituser" )
+        return "edituser";}
+
+    @PostMapping(value = "/edituser")
     public String editUserPage(@ModelAttribute User user) {
-        user = userEntityService.saveUser(user.getId());
+        user = userEntityService.updateUser(user);
         ResponseEntity.ok(user);
         return "redirect:/updateuser";
     }
+
+
+    // This get and post mapping will handle addProduct page to create new product
+    @GetMapping("/addproduct")
+    public String addproductPage(Model model) {
+        List<Category> categoryList = categoryEntityService.findAll();
+        model.addAttribute("categories", categoryList);
+
+        model.addAttribute("product", new Product());
+        return "addproduct"; }
+
+    // Go to update page and fill the current product info
+    @GetMapping("/addproduct/{id}")
+    public String toProductEditPage(@PathVariable("id") Long id, Model model) {
+
+        // Add category list for getting the category names in frontend page
+        List<Category> categoryList = categoryEntityService.findAll();
+        model.addAttribute("categories", categoryList);
+
+        Product productById = productEntityService.getProductById(id);
+        model.addAttribute("product", productById);
+        return "addproduct";}
+
+    @PostMapping(value = "/addproduct")
+    public String addproduct(@ModelAttribute Product product) {
+        product = productEntityService.createProduct(product);
+//        product = productEntityService.updateProduct(product);
+        ResponseEntity.ok(product);
+        return "redirect:/main";}
 
     // Remove user
     @PostMapping(value = "/edituser/{id}")
@@ -101,6 +105,26 @@ public class TableController {
         productEntityService.deleteProduct(id);
         return "redirect:/main";
     }
+
+    // Remove Category
+    @PostMapping("/categories/{id}")
+    public String deleteCategory(@PathVariable("id") Long id) {
+        categoryEntityService.deleteCategory(id);
+        return "redirect:/categories";
+    }
+
+
+
+    // These get & post mapping will handle addCategory page to create new category
+    @GetMapping("/addcategory")
+    public String addcategory(Model model) {
+        model.addAttribute("category", new Category());
+        return "addcategory";}
+    @PostMapping("/addcategory")
+    public String createCategory(@ModelAttribute Category category) {
+        category = categoryEntityService.createCategory(category);
+        ResponseEntity.ok(category);
+        return "redirect:/categories";}
 
 
 
@@ -136,16 +160,9 @@ public class TableController {
     }
 
 
-    @GetMapping("/productsfromcategory")
-    public String productsfromcategory() {
-        return "productsfromcategory";
-    }
-
-
-
-    @GetMapping("/updatekdv")
+    @GetMapping("/404")
     public String updatekdv() {
-        return "updatekdv";
+        return "404";
     }
 
     @GetMapping("/categories")

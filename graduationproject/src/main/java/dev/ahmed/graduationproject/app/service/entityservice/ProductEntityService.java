@@ -112,10 +112,10 @@ public class ProductEntityService {
 
     public Product createProduct(Product newProduct){
         // Check if product name present in DB or not
-        Optional<Product> productByName = productDao.findAllByProductName(newProduct.getProductName());
-        if (productByName.isPresent()){
-            throw new UserAlreadyExistsException("Product already exists with the name: " + newProduct.getProductName());
-        }
+//        Optional<Product> productByName = productDao.findAllByProductName(newProduct.getProductName());
+////        if (productByName.isPresent()){
+////            throw new UserAlreadyExistsException("Product already exists with the name: " + newProduct.getProductName());
+////        }
 
         // Insert values and save the product
             // KDV rate and final price not inserted from front end, So we should add it to newProcduct
@@ -128,6 +128,10 @@ public class ProductEntityService {
                 .add(newProduct.getPriceWithoutKdv()));
 
         return productDao.save(newProduct);
+    }
+
+    public Product updateProduct(Product product) {
+        return productDao.save(product);
     }
 
 }

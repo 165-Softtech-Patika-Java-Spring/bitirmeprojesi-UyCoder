@@ -40,12 +40,13 @@
                                 <h5 class="card-title mb-0">===============</h5>
                             </div>
                             <form class="card" th:action="@{/addproduct}" method="post" >
+                                <input type="hidden" name="_method" value="put" th:if="${product!=null}" />
 
                                  <div class="card-header">
                                      <h5 class="card-title mb-0">Please Insert Product Information</h5>
                                 </div>
                                   <div class="card-body">
-                                    <input
+                                    <input th:value="${product.productName}"
                                            name="productName"
                                            type="text"
                                            class="form-control"
@@ -53,16 +54,18 @@
                                 </div>
                                 <div class="card-body">
                                 <select  name="categoryId" class="form-select mb-3">
+
                                     <option
-                                            th:value="*{category.id}"
+
                                             th:each="category:${categories}"
+                                            th:value="*{category.id}"
                                             th:text="${category.categoryName}">
                                     </option>
                                 </select>
                                 </div>
 
                                 <div class="card-body">
-                                    <input name="priceWithoutKdv" type="number" class="form-control" placeholder="Price Without KDV">
+                                    <input th:value="${product.priceWithoutKdv}" name="priceWithoutKdv" type="number" class="form-control" placeholder="Price Without KDV">
                                 </div>
                                 <div class="card-body">
                                 <button type="submit" class="btn btn-primary">Create Product</button>

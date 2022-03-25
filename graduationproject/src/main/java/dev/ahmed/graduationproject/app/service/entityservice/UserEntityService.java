@@ -62,8 +62,7 @@ public class UserEntityService {
     }
 
 
-    public User saveUser(Long id) {
-        User user = userDao.getById(id);
+    public User updateUser(User user) {
         return userDao.save(user);
     }
 }

@@ -68,11 +68,7 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="findbyprice">
-                        <i class="align-middle" data-feather="dollar-sign"></i> <span class="align-middle">Find by Prices</span>
-                    </a>
-                </li>
+
 
 
                 <li class="sidebar-header">
@@ -88,33 +84,17 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="details">
-                        <i class="align-middle" data-feather="align-justify"></i> <span class="align-middle">Category Details</span>
-                    </a>
-                </li>
-
-
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="productsfromcategory">
-                        <i class="align-middle" data-feather="list"></i> <span
-                            class="align-middle">Products by Category</span>
-                    </a>
-                </li>
-
-
-                <li class="sidebar-item">
                     <a class="sidebar-link" href="addcategory">
                         <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Add New Category</span>
                     </a>
                 </li>
 
+
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="updatekdv">
-                        <i class="align-middle" data-feather="trending-up"></i> <span
-                            class="align-middle">Update KDV</span>
+                    <a class="sidebar-link" href="details">
+                        <i class="align-middle" data-feather="align-justify"></i> <span class="align-middle">Category Details</span>
                     </a>
                 </li>
-
 
 
             </ul>
@@ -244,7 +224,10 @@
                                                     <td class="d-none d-xl-table-cell" th:text="${product.priceWithoutKdv}">Price Without KDV</td>
                                                     <td class="d-none d-xl-table-cell" th:text="${product.kdvRate}">KDV Rate (%)</td>
                                                     <td class="d-none d-md-table-cell" th:text="${product.finalPrice}">Final Price</td>
-                                                    <td><button class="btn btn-primary">Edit</button></td>
+                                                    <td>
+                                                        <a class="btn btn-primary" th:href="@{/addproduct/}+${product.id}">Edit</a>
+                                                        <input name="_method" type="hidden" value="PUT" />
+                                                    </td>
                                                     <td><form th:action="@{/main/}+${product.id}" method="post" >
                                                         <input type="hidden" name="_method" value="delete"/>
                                                         <button type="submit" class="btn btn-danger">Delete</button>

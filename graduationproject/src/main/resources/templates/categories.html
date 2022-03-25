@@ -54,7 +54,8 @@
                                                     <th class="d-none d-xl-table-cell">Category ID</th>
                                                     <th class="d-none d-xl-table-cell">Category Name</th>
                                                     <th class="d-none d-xl-table-cell">KDV Rate (%)</th>
-                                                    <th>Action</th>
+                                                    <th>Edit</th>
+                                                    <th>Delete</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -63,8 +64,11 @@
                                                     <td  th:text="${category.categoryName}" class="d-none d-xl-table-cell">Category Name</td>
                                                     <td  th:text="${category.kdvRate}" class="d-none d-xl-table-cell">KDV Rate (%)</td>
                                                     <td><button class="btn btn-primary">Edit</button>
-                                                        <button class="btn btn-danger">Delete</button>
                                                     </td>
+                                                    <td><form th:action="@{/categories/}+${category.id}" method="post" >
+                                                        <input type="hidden" name="_method" value="delete"/>
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
