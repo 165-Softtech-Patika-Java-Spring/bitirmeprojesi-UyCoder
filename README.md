@@ -456,13 +456,13 @@ Graduation Project
 <p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
 ## Reference
+These are the links of readings and video turorials I used when I work on this project.
 
 ### Articles
 - https://www.baeldung.com/thymeleaf-in-spring-mvc
 - https://www.baeldung.com/spring-boot-crud-thymeleaf
 - https://www.baeldung.com/spring-cloud-heroku
 - https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku
-
 
 ### Videos
 - https://www.youtube.com/playlist?list=PLLCTYkJ1vsDBYoOxOjNY7f6yiQLL7rbab
@@ -471,7 +471,6 @@ Graduation Project
 - https://www.youtube.com/watch?v=5Bj1ZEvsTWI
 - https://www.youtube.com/watch?v=g5oI0sIUmB0
 
- https://www.youtube.com/playlist?list=PLmOn9nNkQxJFKh2PMfWbGT7RVuMowsx-u
 
 <p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
