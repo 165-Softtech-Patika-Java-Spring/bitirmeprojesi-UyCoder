@@ -67,6 +67,33 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 ### Demo
 [Project Demo link](http://54.90.118.123:8080/)
 
+#### Screenshots of the user interface:
+<details>
+
+  ![01](https://user-images.githubusercontent.com/50663127/160109151-a35f15c2-7669-4542-ae33-47ac4e45164a.PNG)
+
+  ![02](https://user-images.githubusercontent.com/50663127/160109171-202eda6d-4102-4a77-9f27-b330af5a24f4.PNG)
+
+  ![03](https://user-images.githubusercontent.com/50663127/160109212-d8939364-72d5-4562-ae1c-0279ffce4ba1.PNG)
+
+  ![04](https://user-images.githubusercontent.com/50663127/160109216-30519afc-ef4d-4536-91ed-757dd3a02ec9.PNG)
+
+  ![05](https://user-images.githubusercontent.com/50663127/160109227-b9156c87-3e09-4673-a41d-2f36f2d86f44.PNG)
+
+  ![06](https://user-images.githubusercontent.com/50663127/160109251-91483742-f4ae-4f10-bd01-49fc1005b3e8.PNG)
+
+  ![07](https://user-images.githubusercontent.com/50663127/160109254-7c21581b-2aad-4089-92cd-c2b4408ab664.PNG)
+  
+![08](https://user-images.githubusercontent.com/50663127/160109272-9a1d3c56-af65-4edb-8cc2-1790a10f013f.PNG)
+  
+![09](https://user-images.githubusercontent.com/50663127/160109285-21e46d64-600f-4d35-a647-232384412a5e.PNG)
+
+  
+</details>
+
+
+
+
 ### Swagger Documentation
 [Swagger-UI link](http://54.90.118.123:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
 
