@@ -96,9 +96,11 @@ I used PostgreSQL for the Databse of this project and here is the tables and col
 
 ### Screenshots for swagger file 
 <details>
+ 
 ![08](https://user-images.githubusercontent.com/50663127/160109272-9a1d3c56-af65-4edb-8cc2-1790a10f013f.PNG)
   
 ![09](https://user-images.githubusercontent.com/50663127/160109285-21e46d64-600f-4d35-a647-232384412a5e.PNG)
+  
 </details>
 
 ### Technologies
