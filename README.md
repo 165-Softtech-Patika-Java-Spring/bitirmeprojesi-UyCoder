@@ -35,7 +35,7 @@
 * [Reference](#Reference)
     + [Articles](#Articles)
     + [Videos](#Videos)
-* [Acknowledgments](#Thank-you-all-!!!)
+* [Acknowledgments](#Thank-you-all)
     + [Patika](#To-Patika)
     + [Softtech](#To-Softtech)
     + [Teacher](#To-Teacher)
@@ -474,7 +474,7 @@ These are the links of readings and video turorials I used when I work on this p
 
 <p align="right">(<a href="#Table-of-contents">Table of Contents</a>)</p>
 
-## Thank you all !!!
+## Thank you all
 ### To Patika
 Many thanks to the team of <img src='https://user-images.githubusercontent.com/49093196/123759976-178bdc00-d8c9-11eb-84e2-0fd001083756.png' alt='patika' height='20'> who organized this bootcamp. I believe they are now doing very god job for Turkey's technological development. <strong>Thank You for your efforts!</strong>👏🏻
 ### To Softtech
