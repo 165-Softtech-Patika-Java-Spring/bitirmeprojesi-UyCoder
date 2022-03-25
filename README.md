@@ -129,6 +129,11 @@ I used Maven as a dependency management framework. Here is how I configured the 
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-hateoas</artifactId>
     </dependency>
     <dependency>
@@ -175,15 +180,15 @@ I used Maven as a dependency management framework. Here is how I configured the 
       <version>1.5.13</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.thymeleaf</groupId>
-      <artifactId>thymeleaf-spring5</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.webjars</groupId>
-      <artifactId>bootstrap</artifactId>
-      <version>4.3.1</version>
-    </dependency>
+    <!--        <dependency>-->
+    <!--            <groupId>org.thymeleaf</groupId>-->
+    <!--            <artifactId>thymeleaf-spring5</artifactId>-->
+    <!--        </dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.webjars</groupId>-->
+    <!--            <artifactId>bootstrap</artifactId>-->
+    <!--            <version>4.3.1</version>-->
+    <!--        </dependency>-->
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>webjars-locator-core</artifactId>
@@ -224,6 +229,7 @@ I used Maven as a dependency management framework. Here is how I configured the 
 
 </project>
 
+
 ```
 </details>
 
@@ -240,27 +246,6 @@ Graduation Project
 │  BitirmeProjesiHazirlikDokumani.pdf
 │  BitirmeProjesiTalepleri.md
 │  README.md
-│
-├─.idea
-│  │  .gitignore
-│  │
-│  ├─dataSources
-│  │  │  13f2fc53-6397-4739-984e-1c4b103ec0e3.xml
-│  │  │
-│  │  └─13f2fc53-6397-4739-984e-1c4b103ec0e3
-│  │      └─storage_v2
-│  │          └─_src_
-│  │              └─database
-│  │                  │  finalproject.4xihCA.meta
-│  │                  │
-│  │                  └─finalproject.4xihCA
-│  │                      └─schema
-│  │                              information_schema.FNRwLQ.meta
-│  │                              pg_catalog.0S1ZNQ.meta
-│  │                              public.abK9xQ.meta
-│  │
-│  └─libraries
-│
 └─graduationproject
     │  .gitignore
     │  graduationproject.iml
@@ -283,13 +268,20 @@ Graduation Project
     │  │  │              │  GraduationprojectApplication.java
     │  │  │              │
     │  │  │              ├─app
-    │  │  │              │  ├─config
+    │  │  │              │  ├─configs
+    │  │  │              │  │      AppMvcConfig.java
+    │  │  │              │  │
     │  │  │              │  ├─controller
-    │  │  │              │  │      CategoryController.java
-    │  │  │              │  │      ProductController.java
-    │  │  │              │  │      UserController.java
+    │  │  │              │  │  │  CategoryController.java
+    │  │  │              │  │  │  ProductController.java
+    │  │  │              │  │  │  UserController.java
+    │  │  │              │  │  │
+    │  │  │              │  │  └─frontendcontroller
+    │  │  │              │  │          IndexController.java
+    │  │  │              │  │          TableController.java
     │  │  │              │  │
     │  │  │              │  ├─converter
+    │  │  │              │  │      CategoryDetailsMapper.java
     │  │  │              │  │      UserMapper.java
     │  │  │              │  │
     │  │  │              │  ├─dao
@@ -299,11 +291,13 @@ Graduation Project
     │  │  │              │  │
     │  │  │              │  ├─dto
     │  │  │              │  │      CategoryDto.java
+    │  │  │              │  │      CategoryFindAllDetailsDto.java
     │  │  │              │  │      CategoryUpdateKdvDto.java
     │  │  │              │  │      ProductDto.java
     │  │  │              │  │      ProductSaveRequestDto.java
     │  │  │              │  │      ProductUpdatePriceDto.java
     │  │  │              │  │      UserDto.java
+    │  │  │              │  │      UserLoginDto.java
     │  │  │              │  │      UserResponseDto.java
     │  │  │              │  │      UserSaveRequestDto.java
     │  │  │              │  │      UserUpdateRequestDto.java
@@ -364,140 +358,63 @@ Graduation Project
     │  │      │  banner.txt
     │  │      │
     │  │      ├─static
-    │  │      │  │  index.html
-    │  │      │  │  style2.css
+    │  │      │  ├─css
+    │  │      │  │      app.css
+    │  │      │  │      app.css.map
+    │  │      │  │      style.css
     │  │      │  │
-    │  │      │  ├─homepage
-    │  │      │  │      homepage.html
+    │  │      │  ├─img
+    │  │      │  │  │  ProjectStructure.jpg
+    │  │      │  │  │  softtech_logo-1.png
+    │  │      │  │  │  softtech_logo.png
+    │  │      │  │  │
+    │  │      │  │  ├─avatars
+    │  │      │  │  │      avatar.jpg
+    │  │      │  │  │
+    │  │      │  │  └─icons
+    │  │      │  │          icon-48x48.png
     │  │      │  │
-    │  │      │  └─register
-    │  │      │          register.html
-    │  │      │          style3.css
+    │  │      │  └─js
+    │  │      │          app.js
+    │  │      │          app.js.LICENSE.txt
+    │  │      │          app.js.map
     │  │      │
     │  │      └─templates
+    │  │          │  404.html
+    │  │          │  addcategory.html
+    │  │          │  addproduct.html
+    │  │          │  categories.html
+    │  │          │  details.html
+    │  │          │  edituser.html
+    │  │          │  login.html
+    │  │          │  main.html
+    │  │          │  signup.html
+    │  │          │  updateproduct.html
+    │  │          │  updateuser.html
+    │  │          │
+    │  │          └─table
     │  └─test
     │      └─java
     │          └─dev
     │              └─ahmed
     │                  └─graduationproject
-    │                          GraduationprojectApplicationTests.java
+    │                      │  GraduationprojectApplicationTests.java
+    │                      │
+    │                      └─app
+    │                          ├─controller
+    │                          │      CategoryControllerTest.java
+    │                          │      ProductControllerTest.java
+    │                          │      UserControllerTest.java
+    │                          │
+    │                          └─service
+    │                              └─entityservice
+    │                                      CategoryEntityServiceTest.java
+    │                                      ProductEntityServiceTest.java
+    │                                      UserEntityServiceTest.java
     │
     └─target
-        ├─classes
-        │  │  application.properties
-        │  │  banner.txt
-        │  │
-        │  ├─dev
-        │  │  └─ahmed
-        │  │      └─graduationproject
-        │  │          │  GraduationprojectApplication.class
-        │  │          │
-        │  │          ├─app
-        │  │          │  ├─controller
-        │  │          │  │      CategoryController.class
-        │  │          │  │      ProductController.class
-        │  │          │  │      UserController.class
-        │  │          │  │
-        │  │          │  ├─converter
-        │  │          │  │      UserMapper.class
-        │  │          │  │      UserMapperImpl.class
-        │  │          │  │
-        │  │          │  ├─dao
-        │  │          │  │      CategoryDao.class
-        │  │          │  │      ProductDao.class
-        │  │          │  │      UserDao.class
-        │  │          │  │
-        │  │          │  ├─dto
-        │  │          │  │      CategoryDto.class
-        │  │          │  │      CategoryUpdateKdvDto.class
-        │  │          │  │      ProductDto.class
-        │  │          │  │      ProductSaveRequestDto.class
-        │  │          │  │      ProductUpdatePriceDto.class
-        │  │          │  │      UserDto.class
-        │  │          │  │      UserResponseDto.class
-        │  │          │  │      UserSaveRequestDto.class
-        │  │          │  │      UserUpdateRequestDto.class
-        │  │          │  │
-        │  │          │  ├─entity
-        │  │          │  │      Category.class
-        │  │          │  │      Product.class
-        │  │          │  │      User.class
-        │  │          │  │
-        │  │          │  ├─exception
-        │  │          │  │      CategoryAlreadyExistsException.class
-        │  │          │  │      CategoryNotFoundException.class
-        │  │          │  │      ProductAlreadyExistsException.class
-        │  │          │  │      ProductNotFoundException.class
-        │  │          │  │      UserAlreadyExistsException.class
-        │  │          │  │      UserNotFoundException.class
-        │  │          │  │
-        │  │          │  └─service
-        │  │          │      │  Service.class
-        │  │          │      │
-        │  │          │      └─entityservice
-        │  │          │              CategoryEntityService.class
-        │  │          │              ProductEntityService.class
-        │  │          │              UserEntityService.class
-        │  │          │
-        │  │          ├─converter
-        │  │          │      UserMapperImpl.class
-        │  │          │
-        │  │          └─gen
-        │  │              ├─dto
-        │  │              │      RestResponse.class
-        │  │              │
-        │  │              ├─entity
-        │  │              │      BaseAdditionalFields.class
-        │  │              │      BaseEntity.class
-        │  │              │      BaseModel.class
-        │  │              │
-        │  │              ├─enums
-        │  │              │      BaseErrorMessage.class
-        │  │              │      GenErrorMessage.class
-        │  │              │      GenStatusType.class
-        │  │              │
-        │  │              ├─exception
-        │  │              │      GenCustomizedResponseEntityExceptionHandler.class
-        │  │              │      GenExceptionResponse.class
-        │  │              │
-        │  │              ├─exceptions
-        │  │              │      GenBusinessException.class
-        │  │              │      ItemNotFoundException.class
-        │  │              │
-        │  │              ├─service
-        │  │              │      BaseEntityService.class
-        │  │              │
-        │  │              └─util
-        │  │                      DateUtil.class
-        │  │
-        │  └─static
-        │      │  index.html
-        │      │  style2.css
-        │      │
-        │      ├─homepage
-        │      │      homepage.html
-        │      │
-        │      └─register
-        │              register.html
-        │              style3.css
-        │
-        ├─generated-sources
-        │  └─annotations
-        │      └─dev
-        │          └─ahmed
-        │              └─graduationproject
-        │                  └─app
-        │                      └─converter
-        │                              UserMapperImpl.java
-        │
-        ├─generated-test-sources
-        │  └─test-annotations
-        └─test-classes
-            └─dev
-                └─ahmed
-                    └─graduationproject
-                            GraduationprojectApplicationTests.class
-
+        │  graduationproject-0.0.1-SNAPSHOT.jar
+        │  graduationproject-0.0.1-SNAPSHOT.jar.original
 ```
 
 </details>
